@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T18:42:02Z",
+  "updatedAt": "2026-07-24T18:50:16Z",
   "packs": [
     {
       "name": "4sangre",
@@ -394,6 +394,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود سروایوال  دلقک های ترسناک/photo_2026-07-07_18-24-49.jpg",
       "tested": false
+    },
+    {
+      "name": "مود سروایوال با آدم فضایی",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود سروایوال با آدم فضایی/File/§6Alien Apocalypse §rAdd-On (Add-on).mcaddon",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود سروایوال با آدم فضایی/photo_2026-07-23_17-50-12.jpg",
+      "tested": true
     },
     {
       "name": "مود سونیک",
