@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T18:26:02Z",
+  "updatedAt": "2026-07-24T18:39:41Z",
   "packs": [
     {
       "name": "4sangre",
@@ -418,6 +418,14 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود هکر/photo_2026-07-21_14-14-52.jpg",
       "tested": false
+    },
+    {
+      "name": "مپ تمرینی بدوراز",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مپ تمرینی بدوراز/File/Bedwars.mcworld",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مپ تمرینی بدوراز/mcpedl-jpg.jpg",
+      "tested": true
     },
     {
       "name": "مپ وان بلاک",
