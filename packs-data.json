@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T20:14:27Z",
+  "updatedAt": "2026-07-24T20:33:16Z",
   "packs": [
     {
       "name": "4sangre",
@@ -568,5 +568,13 @@
   ],
   "films": [],
   "downloads": [],
-  "contacts": []
+  "contacts": [
+    {
+      "name": "کانال اطلاع رسانی روبیکا",
+      "description": null,
+      "link": null,
+      "icon": null,
+      "tested": false
+    }
+  ]
 }
