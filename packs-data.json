@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T07:46:43Z",
+  "updatedAt": "2026-07-25T07:47:34Z",
   "packs": [
     {
       "name": "4sangre",
@@ -378,14 +378,6 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود انواع میم/photo_2026-07-07_12-49-55%20(1).jpg",
       "tested": true
-    },
-    {
-      "name": "مود بن تن  سبک",
-      "file": null,
-      "description": "بدراک 1.20 به بالا",
-      "compatibility": "سازگار بدراک",
-      "icon": null,
-      "tested": false
     },
     {
       "name": "مود بن تن",
