@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T07:18:47Z",
+  "updatedAt": "2026-07-25T07:31:22Z",
   "packs": [
     {
       "name": "4sangre",
@@ -378,6 +378,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود بن تن/photo_2026-07-07_12-49-55.jpg",
       "tested": false
+    },
+    {
+      "name": "مود ترسناک ویریتی",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود ترسناک ویریتی/File/Verityy.mcaddon",
+      "description": "بدراک 1.20به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود ترسناک ویریتی/hq720.jpg",
+      "tested": true
     },
     {
       "name": "مود ساخت شهر",
