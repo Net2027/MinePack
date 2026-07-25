@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T07:31:22Z",
+  "updatedAt": "2026-07-25T07:37:34Z",
   "packs": [
     {
       "name": "4sangre",
@@ -434,6 +434,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود شهر بازی/photo_2026-07-15_22-56-13.jpg",
       "tested": false
+    },
+    {
+      "name": "مود فوتبال برای ماینکرافت",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود فوتبال برای ماینکرافت/File/Football%20Soccer%20(world_template)%20(1).mctemplate",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/مود فوتبال برای ماینکرافت/photo_2026-07-13_22-06-35%20(1).jpg",
+      "tested": true
     },
     {
       "name": "مود هکر",
