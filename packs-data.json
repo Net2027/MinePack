@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T20:35:41Z",
+  "updatedAt": "2026-07-25T07:18:47Z",
   "packs": [
     {
       "name": "4sangre",
@@ -568,5 +568,13 @@
   ],
   "films": [],
   "downloads": [],
-  "contacts": []
+  "contacts": [
+    {
+      "name": "کانال ما در پیامرسان روبیکا",
+      "description": "اخبار و اطلاع رسانی سایت در این کانال",
+      "link": "rubika.ir/pack_405",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Contact/کانال ما در پیامرسان روبیکا/Screenshot%20(388).png",
+      "tested": false
+    }
+  ]
 }
