@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T13:06:00Z",
+  "updatedAt": "2026-07-30T13:07:46Z",
   "packs": [
     {
       "name": "4sangre",
@@ -184,7 +184,7 @@
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع هواپیما و هلیکوپتر/File/simpleplanes-1.12.2-3.0.1.7.jar",
       "description": "سازگار با نسخه 1.12.2 به بالا",
       "compatibility": "سازگار با جاوا",
-      "icon": null,
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع هواپیما و هلیکوپتر/images.jpg",
       "tested": true
     },
     {
