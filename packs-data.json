@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T13:01:45Z",
+  "updatedAt": "2026-07-30T13:03:11Z",
   "packs": [
     {
       "name": "4sangre",
@@ -114,6 +114,14 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock/com.StusioCraftStudio.LuckySkyBlock_444bdf4d-51f9-4afd-812e-53235a2ab064.png",
       "tested": false
+    },
+    {
+      "name": "automobility (خودرو)",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/automobility (خودرو)/File/automobility-0.5.0.h+1.21.1-fabric.jar",
+      "description": "نسخه 1.21.1 - نیازمند fabric api",
+      "compatibility": "سازگار با جاوا",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/automobility (خودرو)/638352189201716584.png",
+      "tested": true
     },
     {
       "name": "آرمور های ماب ها",
