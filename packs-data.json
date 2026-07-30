@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T14:23:15Z",
+  "updatedAt": "2026-07-30T14:39:04Z",
   "packs": [
     {
       "name": "4sangre",
@@ -639,15 +639,7 @@
     }
   ],
   "films": [],
-  "downloads": [
-    {
-      "name": "TLauncher نسخه ویندوز",
-      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Download/TLauncher نسخه ویندوز/File/TLauncher-Installer-1.9.5.1.exe",
-      "description": "برای نصب ماینکرفت روی کامپیوتر به یک لانچر نیاز دارید. تی لانچر یکی از بهترین لانچر ها می باشد. (دارای تمامی نسخه های بازی)",
-      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Download/TLauncher نسخه ویندوز/nody-عکس-بازی-ماینکرافت-اصلی-1631370084.jpg",
-      "tested": true
-    }
-  ],
+  "downloads": [],
   "contacts": [
     {
       "name": "کانال ما در پیامرسان تلگرام",
