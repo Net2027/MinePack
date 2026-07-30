@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T14:19:19Z",
+  "updatedAt": "2026-07-30T14:23:15Z",
   "packs": [
     {
       "name": "4sangre",
@@ -649,6 +649,13 @@
     }
   ],
   "contacts": [
+    {
+      "name": "کانال ما در پیامرسان تلگرام",
+      "description": "اخبار و اطلاع رسانی سایت در این کانال",
+      "link": "https://t.me/minecraftpackiran",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Contact/کانال ما در پیامرسان تلگرام/images%20(1).jpeg",
+      "tested": false
+    },
     {
       "name": "کانال ما در پیامرسان روبیکا",
       "description": "اخبار و اطلاع رسانی سایت در این کانال",
