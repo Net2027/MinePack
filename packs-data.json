@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T13:03:11Z",
+  "updatedAt": "2026-07-30T13:06:00Z",
   "packs": [
     {
       "name": "4sangre",
@@ -105,6 +105,14 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/1000ماموریت/photo_2026-07-23_09-15-54.jpg",
+      "tested": true
+    },
+    {
+      "name": "Fabric Api",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Fabric%20Api/File/fabric-api-0.116.14+1.21.1.jar",
+      "description": "پیش نیاز مود های جاوا - نسخه 1.21.1",
+      "compatibility": "سازگار با جاوا",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Fabric%20Api/images.png",
       "tested": true
     },
     {
