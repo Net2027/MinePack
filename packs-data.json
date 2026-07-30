@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T07:12:12Z",
+  "updatedAt": "2026-07-30T07:15:12Z",
   "packs": [
     {
       "name": "4sangre",
@@ -161,6 +161,14 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع ماب های ترسناک جهش یافته برای/IMG_20260720_153555_209.jpg",
+      "tested": true
+    },
+    {
+      "name": "انواع هواپیما و هلیکوپتر",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/انواع هواپیما و هلیکوپتر/File/simpleplanes-1.12.2-3.0.1.7.jar",
+      "description": "سازگار با نسخه 1.12.2 به بالا",
+      "compatibility": "سازگار با جاوا",
+      "icon": null,
       "tested": true
     },
     {
