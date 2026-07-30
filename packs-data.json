@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T06:33:23Z",
+  "updatedAt": "2026-07-30T06:39:50Z",
   "packs": [
     {
       "name": "4sangre",
@@ -114,14 +114,6 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/Lucky-SkyBlock/com.StusioCraftStudio.LuckySkyBlock_444bdf4d-51f9-4afd-812e-53235a2ab064.png",
       "tested": false
-    },
-    {
-      "name": "automobility (خودرو) برای جاوا",
-      "file": null,
-      "description": "مخصوص نسخه 1.21.1",
-      "compatibility": "سازگار با جاوا",
-      "icon": null,
-      "tested": true
     },
     {
       "name": "آرمور های ماب ها",
