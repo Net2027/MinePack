@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T13:07:46Z",
+  "updatedAt": "2026-07-30T14:18:14Z",
   "packs": [
     {
       "name": "4sangre",
@@ -639,12 +639,20 @@
     }
   ],
   "films": [],
-  "downloads": [],
+  "downloads": [
+    {
+      "name": "TLauncher نسخه ویندوز",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Download/TLauncher نسخه ویندوز/File/TLauncher-Installer-1.9.5.1.exe",
+      "description": "برای نصب ماینکرفت روی کامپیوتر به یک لانچر نیاز دارید. تی لانچر یکی از بهترین لانچر ها می باشد. (دارای تمامی نسخه های بازی)",
+      "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Download/TLauncher نسخه ویندوز/minecraft-logo-2.png",
+      "tested": true
+    }
+  ],
   "contacts": [
     {
       "name": "کانال ما در پیامرسان روبیکا",
       "description": "اخبار و اطلاع رسانی سایت در این کانال",
-      "link": "rubika.ir/pack_405",
+      "link": "https://rubika.ir/pack_405",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Contact/کانال ما در پیامرسان روبیکا/Screenshot%20(388).png",
       "tested": false
     }
