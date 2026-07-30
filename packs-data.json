@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T06:43:39Z",
+  "updatedAt": "2026-07-30T07:12:12Z",
   "packs": [
     {
       "name": "4sangre",
@@ -273,6 +273,14 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/ساخت ماشین/photo_2026-07-23_09-13-14.jpg",
+      "tested": true
+    },
+    {
+      "name": "لاکی بلاک",
+      "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/لاکی بلاک/File/lucky-block-forge-1.8.9-2.0.jar",
+      "description": "سازگار با نسخه 1.8.9",
+      "compatibility": "سازگار با جاوا",
+      "icon": null,
       "tested": true
     },
     {
