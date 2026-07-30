@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T07:15:12Z",
+  "updatedAt": "2026-07-30T07:15:42Z",
   "packs": [
     {
       "name": "4sangre",
@@ -286,7 +286,7 @@
     {
       "name": "لاکی بلاک",
       "file": "https://raw.githubusercontent.com/Net2027/Packiran/main/Mod/لاکی بلاک/File/lucky-block-forge-1.8.9-2.0.jar",
-      "description": "سازگار با نسخه 1.8.9",
+      "description": "سازگار با نسخه 1.8.9 به بالا",
       "compatibility": "سازگار با جاوا",
       "icon": null,
       "tested": true
