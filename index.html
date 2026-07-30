@@ -400,7 +400,7 @@
         .delay-3 { animation-delay: 0.6s; } 
 
         /* لایه بندی کامپوننت‌های شیشه‌ای برای جدا ماندن از ریکالکولت انیمیشن Grid */
-        header, .card, footer, .coming-soon-wrapper {
+        header, .card, footer, .coming-soon-wrapper, .guide-wrapper {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -415,7 +415,7 @@
         }
 
         /* خط طلایی ظریف در بالای هر سطح شیشه‌ای - امضای بصری صفحه */
-        header::before, .card::before, footer::before, .coming-soon-wrapper::before {
+        header::before, .card::before, footer::before, .coming-soon-wrapper::before, .guide-wrapper::before {
             content: '';
             position: absolute;
             top: 0;
@@ -763,6 +763,190 @@
 
         .coming-soon-wrapper p:last-child {
             margin-bottom: 0;
+        }
+
+        /* ===== تب راهنما ===== */
+        .guide-wrapper {
+            padding: 55px 45px;
+            border-radius: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .guide-head {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .guide-head i {
+            font-size: 4rem;
+            color: var(--primary-cyan);
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 15px rgba(47, 111, 237, 0.4));
+            animation: float-loader 3s ease-in-out infinite;
+        }
+
+        .guide-head h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .guide-head p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guide-wrapper h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 45px 0 20px 0;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .guide-wrapper h3 i {
+            color: var(--primary-cyan);
+            font-size: 1.5rem;
+        }
+
+        .guide-wrapper h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            margin: 30px 0 14px 0;
+        }
+
+        .guide-wrapper p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+
+        .guide-wrapper ol,
+        .guide-wrapper ul {
+            padding-right: 22px;
+            margin-bottom: 18px;
+        }
+
+        .guide-wrapper li {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 10px;
+        }
+
+        .guide-wrapper ul.guide-checklist {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .guide-wrapper ul.guide-checklist li {
+            padding-right: 30px;
+            position: relative;
+        }
+
+        .guide-wrapper ul.guide-checklist li::before {
+            content: '\2713';
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--emerald);
+            font-weight: 700;
+        }
+
+        /* مسیرها و نام فایل‌ها */
+        .guide-wrapper code {
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+            direction: ltr;
+            display: inline-block;
+            background: var(--emerald-soft);
+            color: var(--emerald);
+            border: 1px solid rgba(31, 174, 118, 0.25);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            unicode-bidi: embed;
+        }
+
+        .guide-path {
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+            direction: ltr;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 12px 0 18px 0;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        html[data-theme="light"] .guide-path {
+            background: rgba(20, 40, 100, 0.06);
+        }
+
+        /* جعبه هشدار / نکته */
+        .guide-note {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: rgba(47, 111, 237, 0.10);
+            border: 1px solid var(--glass-border);
+            border-right: 3px solid var(--primary-cyan);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+
+        .guide-note i {
+            color: var(--primary-cyan);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .guide-note p {
+            margin: 0;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .guide-note.is-warning {
+            background: rgba(237, 165, 47, 0.10);
+            border-right-color: #eda52f;
+        }
+
+        .guide-note.is-warning i { color: #eda52f; }
+
+        .guide-outro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 45px;
+            padding-top: 28px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @media (max-width: 600px) {
+            .guide-wrapper { padding: 40px 22px; }
+            .guide-head h2 { font-size: 1.8rem; }
+            .guide-wrapper h3 { font-size: 1.35rem; }
         }
 
         .site-search-box {
@@ -1358,7 +1542,135 @@
             <div class="packs-grid" id="videos-list" style="display:none;"></div>
         </div>
 
-        <!-- تب ۷: درباره ما -->
+        <!-- تب ۷: راهنما -->
+        <div id="guide" class="tab-section">
+            <div class="guide-wrapper">
+                <div class="guide-head">
+                    <i class="ph-fill ph-book-open-text"></i>
+                    <h2>راهنمای نصب مود ماینکرفت در اندروید و کامپیوتر</h2>
+                    <p>
+                        مودها (Mods) قابلیت‌های جدیدی به ماینکرفت اضافه می‌کنند؛ از اضافه شدن آیتم‌ها و موجودات جدید
+                        گرفته تا تغییر گرافیک، مکانیک بازی و امکانات بیشتر. در این راهنما نحوه نصب مود در نسخه Java
+                        (کامپیوتر) و Bedrock (اندروید) را توضیح می‌دهیم.
+                    </p>
+                </div>
+
+                <h3><i class="ph-fill ph-desktop-tower"></i> نصب مود در کامپیوتر (Minecraft Java Edition)</h3>
+
+                <h4>مرحله ۱: نصب Forge یا Fabric</h4>
+                <p>برای اجرای بیشتر مودهای ماینکرفت، ابتدا باید یک Mod Loader نصب کنید.</p>
+                <p><strong>نصب Forge:</strong></p>
+                <ol>
+                    <li>وارد سایت رسمی Forge شوید.</li>
+                    <li>نسخه ماینکرفت خود را انتخاب کنید.</li>
+                    <li>فایل Installer را دانلود کنید.</li>
+                    <li>فایل دانلود شده را اجرا کنید.</li>
+                    <li>گزینه <code>Install Client</code> را انتخاب کنید.</li>
+                </ol>
+                <p>بعد از نصب، یک پروفایل جدید در لانچر ماینکرفت ایجاد می‌شود.</p>
+
+                <h4>مرحله ۲: دانلود مود</h4>
+                <ol>
+                    <li>مود مورد نظر خود را از سایت ماین پک دانلود کنید.</li>
+                    <li>فایل مود معمولاً با پسوند <code>.jar</code> است.</li>
+                </ol>
+                <div class="guide-note is-warning">
+                    <i class="ph-fill ph-warning"></i>
+                    <p>
+                        توجه کنید نسخه مود باید با نسخه ماینکرفت و Forge/Fabric شما هماهنگ باشد.
+                        مثال: <code>Minecraft 1.20.1</code> با <code>Forge 47.x</code>
+                    </p>
+                </div>
+
+                <h4>مرحله ۳: انتقال مود به پوشه Mods</h4>
+                <ol>
+                    <li>کلیدهای <code>Win + R</code> را فشار دهید.</li>
+                    <li>عبارت <code>%appdata%</code> را وارد کنید.</li>
+                    <li>وارد پوشه <code>.minecraft</code> شوید.</li>
+                    <li>پوشه‌ای با نام <code>mods</code> بسازید (اگر وجود ندارد).</li>
+                    <li>فایل مود دانلود شده را داخل پوشه Mods قرار دهید.</li>
+                </ol>
+
+                <h4>مرحله ۴: اجرای بازی</h4>
+                <ol>
+                    <li>لانچر ماینکرفت را باز کنید.</li>
+                    <li>پروفایل Forge یا Fabric را انتخاب کنید.</li>
+                    <li>بازی را اجرا کنید.</li>
+                </ol>
+                <p>اگر همه چیز درست باشد، مود در منوی Mods نمایش داده می‌شود.</p>
+
+                <h3><i class="ph-fill ph-device-mobile"></i> نصب مود در اندروید (Minecraft Bedrock)</h3>
+                <p>در نسخه موبایل، مودها معمولاً به شکل Addon نصب می‌شوند. فرمت فایل‌ها:
+                    <code>.mcaddon</code> <code>.mcpack</code> <code>.zip</code>
+                </p>
+
+                <h4>روش اول: نصب خودکار (.mcaddon / .mcpack)</h4>
+                <ol>
+                    <li>فایل مود را دانلود کنید.</li>
+                    <li>روی فایل ضربه بزنید.</li>
+                    <li>گزینه باز کردن با <code>Minecraft</code> را انتخاب کنید.</li>
+                    <li>ماینکرفت باز شده و پیام <code>Import Started</code> نمایش داده می‌شود.</li>
+                    <li>بعد از پایان، پیام <code>Successfully Imported</code> نمایش داده می‌شود.</li>
+                </ol>
+
+                <h4>فعال کردن مود در دنیا</h4>
+                <ol>
+                    <li>وارد Minecraft شوید.</li>
+                    <li>یک دنیای جدید بسازید یا دنیای قبلی را ویرایش کنید.</li>
+                    <li>وارد بخش <code>Behavior Packs</code> و <code>Resource Packs</code> شوید.</li>
+                    <li>مود را فعال کنید.</li>
+                    <li>وارد بازی شوید.</li>
+                </ol>
+
+                <h4>نصب مود اندروید به صورت دستی</h4>
+                <p>اگر فایل مود ZIP بود:</p>
+                <ol>
+                    <li>فایل را استخراج کنید.</li>
+                    <li>پوشه‌های مود را پیدا کنید.</li>
+                    <li>آن‌ها را به مسیر زیر منتقل کنید:</li>
+                </ol>
+                <div class="guide-path">Android/data/com.mojang.minecraftpe/files/games/com.mojang/</div>
+                <p>پوشه‌ها:</p>
+                <ul>
+                    <li><code>resource_packs</code> برای تکسچرها و گرافیک</li>
+                    <li><code>behavior_packs</code> برای تغییر رفتار بازی</li>
+                </ul>
+
+                <h3><i class="ph-fill ph-wrench"></i> مشکلات رایج نصب مود</h3>
+
+                <h4>مود در بازی نمایش داده نمی‌شود؟</h4>
+                <p>دلایل احتمالی:</p>
+                <ul class="guide-checklist">
+                    <li>نسخه مود با نسخه ماینکرفت هماهنگ نیست.</li>
+                    <li>Forge یا Fabric نصب نشده است.</li>
+                    <li>فایل مود در پوشه اشتباه قرار گرفته است.</li>
+                    <li>مود نیاز به مودهای جانبی دارد.</li>
+                </ul>
+
+                <h4>بازی کرش می‌کند؟</h4>
+                <p>راه‌حل‌ها:</p>
+                <ol>
+                    <li>مودهای اضافی را حذف کنید.</li>
+                    <li>نسخه Java یا Bedrock را بررسی کنید.</li>
+                    <li>مطمئن شوید RAM کافی به ماینکرفت اختصاص داده شده است.</li>
+                </ol>
+
+                <h3><i class="ph-fill ph-lightbulb"></i> نکات مهم قبل از نصب مود</h3>
+                <ul class="guide-checklist">
+                    <li>همیشه از دنیای خود بکاپ بگیرید.</li>
+                    <li>چند مود بزرگ را همزمان نصب نکنید مگر مطمئن باشید سازگار هستند.</li>
+                    <li>توضیحات مود و نسخه مورد نیاز را قبل از دانلود بخوانید.</li>
+                    <li>مودها را فقط از منابع معتبر دانلود کنید.</li>
+                </ul>
+
+                <div class="guide-outro">
+                    <p>حالا می‌توانید مودهای مورد علاقه خود را نصب کنید و تجربه ماینکرفت را شخصی‌سازی کنید! 🎮</p>
+                    <p>ماین پک — مرجع دانلود مود، شیدر و ریسورس پک ماینکرفت</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- تب ۸: درباره ما -->
         <div id="about" class="tab-section">
             <div class="coming-soon-wrapper">
                 <i class="ph-fill ph-users-three"></i>
@@ -1382,7 +1694,7 @@
             </div>
         </div>
 
-        <!-- تب ۸: تماس -->
+        <!-- تب ۹: تماس -->
         <div id="contact" class="tab-section">
             <div class="coming-soon-wrapper" id="contact-coming-soon">
                 <i class="ph-fill ph-envelope-simple-open"></i>
