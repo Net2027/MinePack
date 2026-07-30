@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پک ایران | مرجع تخصصی ماینکرفت</title>
+    <title>ماین پک | مرجع تخصصی ماینکرفت</title>
     
     <!-- آیکون‌های Phosphor با ویژگی defer -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
@@ -17,7 +17,7 @@
     <script>
         (function () {
             try {
-                var saved = localStorage.getItem('packiran_theme');
+                var saved = localStorage.getItem('minepack_theme');
                 var theme = saved === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
             } catch (e) {}
@@ -1156,9 +1156,9 @@
             <span class="loader-sparkle s3"></span>
 
             <div class="loader-logo-wrapper">
-                <img src="main.png" alt="پک ایران" class="loader-logo">
+                <img src="main.png" alt="ماین پک" class="loader-logo">
             </div>
-            <h1 class="brand-title">پک ایران</h1>
+            <h1 class="brand-title">ماین پک</h1>
             <div class="status-text" id="loader-status">در حال ساخت دنیا</div>
             <div class="progress-track">
                 <div class="progress-fill"></div>
@@ -1173,7 +1173,7 @@
     <!-- هدر سایت -->
     <header class="animate-up delay-1">
         <div class="logo-section">
-            <img src="main.png" alt="پک ایران">
+            <img src="main.png" alt="ماین پک">
         </div>
         <div class="nav-wrapper">
             <nav>
@@ -1270,7 +1270,7 @@
                     </div>
                     <div class="card-info">
                         <h2 class="card-title">درباره ما <i class="ph-bold ph-arrow-left"></i></h2>
-                        <p class="card-desc">با تیم پک ایران و هدفمون از ساخت این پلتفرم بیشتر آشنا بشید.</p>
+                        <p class="card-desc">با تیم ماین پک و هدفمون از ساخت این پلتفرم بیشتر آشنا بشید.</p>
                     </div>
                 </a>
 
@@ -1364,7 +1364,7 @@
                 <i class="ph-fill ph-users-three"></i>
                 <h2>درباره ما</h2>
                 <p>
-                    «پک ایران» حاصل تلاش تیمی کوچک از برنامه‌نویسان حرفه‌ای است که با علاقه‌ی واقعی به دنیای ماینکرفت شکل گرفته؛
+                    «ماین پک» حاصل تلاش تیمی کوچک از برنامه‌نویسان حرفه‌ای است که با علاقه‌ی واقعی به دنیای ماینکرفت شکل گرفته؛
                     جایی که تخصص فنی در کنار عشق به بازی، یک هدف مشترک را دنبال می‌کند: ساده‌تر، سریع‌تر و لذت‌بخش‌تر کردن تجربه‌ی بازی برای هر کاربر ایرانی.
                 </p>
                 <p>
@@ -1376,7 +1376,7 @@
                     این پلتفرم هنوز در مسیر رشد است و هر روز با امکانات و محتوای تازه‌تری به‌روزرسانی می‌شود.
                 </p>
                 <p>
-                    اگر پیشنهاد، انتقاد یا ایده‌ای برای بهتر شدن «پک ایران» دارید، خوشحال می‌شویم صدای شما را بشنویم —
+                    اگر پیشنهاد، انتقاد یا ایده‌ای برای بهتر شدن «ماین پک» دارید، خوشحال می‌شویم صدای شما را بشنویم —
                     چون این پلتفرم برای شماست و با همراهی شما بهتر می‌شود.
                 </p>
             </div>
@@ -1401,7 +1401,7 @@
     <!-- فوتر -->
     <footer class="animate-up delay-3">
         <div class="footer-rights">
-            تمامی حقوق برای <strong>پک ایران</strong> محفوظ است - ۱۴۰۵
+            تمامی حقوق برای <strong>ماین پک</strong> محفوظ است - ۱۴۰۵
         </div>
     </footer>
 
@@ -1470,7 +1470,7 @@
                 const isLight = document.documentElement.getAttribute('data-theme') === 'light';
                 const next = isLight ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', next);
-                try { localStorage.setItem('packiran_theme', next); } catch (e) {}
+                try { localStorage.setItem('minepack_theme', next); } catch (e) {}
             });
         })();
 
@@ -1500,7 +1500,7 @@
 
         // ===== آدرس بک‌اند روی Railway =====
         // این آدرس رو با آدرس واقعی بک‌اندت (بعد از دیپلوی روی Railway) جایگزین کن.
-        // مثال: 'https://packiran-backend-production.up.railway.app'
+        // مثال: 'https://minepack-backend-production.up.railway.app'
         const API_BASE = 'https://web-production-b6b4a.up.railway.app'; // فقط برای ورود/ثبت‌نام کاربر و پنل ادمین استفاده می‌شه
 
         // ===== گرفتن اطلاعات سایت (پک/مود/شیدر/فیلم) با کش ۱ ساعته توی مرورگر =====
