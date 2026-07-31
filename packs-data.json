@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T19:09:13Z",
+  "updatedAt": "2026-07-31T19:26:17Z",
   "packs": [
     {
       "name": "4sangre",
@@ -444,6 +444,14 @@
       "tested": false
     },
     {
+      "name": "مود ترسناک و جدید امروزی hors.jar",
+      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود ترسناک و جدید امروزی hors.jar/File/horse.jar%20.mcaddon",
+      "description": "بدراک 1.26.30 بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود ترسناک و جدید امروزی hors.jar/Screenshot%20(401).png",
+      "tested": true
+    },
+    {
       "name": "مود ترسناک ویریتی",
       "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود ترسناک ویریتی/File/Verityy.mcaddon",
       "description": "بدراک 1.20به بالا",
@@ -509,7 +517,7 @@
     },
     {
       "name": "مود فوق ترسناک و ترند شده امروزی hors.jar",
-      "file": null,
+      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود فوق ترسناک و ترند شده امروزی hors.jar/File/horse.jar%20.mcaddon",
       "description": "بدراک 1.26.30",
       "compatibility": "سازگار بدراک",
       "icon": null,
