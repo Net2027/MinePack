@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "834364b9a0ed42acb6f9d18538725ac2",
+    "username": "Parsa",
+    "password_hash": "scrypt:32768:8:1$jWtSYqvkNNn6B5Hr$39756fa09b3411b24fc2e3b035d175be341921f7eb8648be816e7f3d0c5d2db35c6242312f2313db98a6da75d5013a9eb07bb05090fb3195d876a9df9ae65aa5",
+    "active": true,
+    "created_at": "2026-07-31T05:25:27Z"
+  }
+]
