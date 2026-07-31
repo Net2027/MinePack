@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T10:14:55Z",
+  "updatedAt": "2026-07-31T10:15:30Z",
   "packs": [
     {
       "name": "4sangre",
@@ -94,14 +94,6 @@
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Venom/Bedrock/Venom16x.rar",
       "description": "سازگار با نسخه 1.21 به بالا",
-      "icon": null,
-      "tested": false
-    },
-    {
-      "name": "uhjg",
-      "java": null,
-      "bedrock": null,
-      "description": null,
       "icon": null,
       "tested": false
     }
