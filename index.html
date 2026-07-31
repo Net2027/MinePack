@@ -83,7 +83,8 @@
 
             --font-family: 'Vazir', sans-serif;
             --font-display: 'Noto Serif Arabic', 'Vazir', serif;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition: all 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition-soft: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* ===== حالت روشن ===== */
@@ -208,6 +209,21 @@
 
         @media (prefers-reduced-motion: reduce) {
             .bg-glow { animation: none; transform: translate3d(-50%, -50%, 0); }
+            .card::after, .pack-item::after, .mod-item::after, .contact-cards-list .card::after { animation: none !important; }
+        }
+
+        /* حلقه‌ی نور چرخان دور کارت‌ها — جایگزین ظریف و لوکس به‌جای زوم شدن
+           نکته‌ی فنی: به‌جای چرخوندن کل لایه (که باعث می‌شد نور به‌صورت یه بلوک
+           جدا از قاب اصلی بچرخه)، فقط زاویه‌ی گرادیانت رو می‌چرخونیم. این‌طوری
+           نور دقیقاً روی مسیر خودِ لبه‌ی کارت (همراه با گوشه‌های گرد) حرکت می‌کنه. */
+        @property --border-angle {
+            syntax: '<angle>';
+            inherits: false;
+            initial-value: 0deg;
+        }
+
+        @keyframes travel-border {
+            to { --border-angle: 360deg; }
         }
 
         #loader-wrapper {
@@ -491,12 +507,12 @@
             padding: 6px;
             border-radius: 50%;
             filter: drop-shadow(0 0 10px rgba(47, 111, 237, 0.4));
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .logo-section img:hover {
-            transform: scale(1.08) rotate(-3deg);
-            filter: drop-shadow(0 0 18px rgba(47, 111, 237, 0.8));
+            transform: scale(1.06) rotate(-2deg);
+            filter: drop-shadow(0 0 20px rgba(47, 111, 237, 0.75));
         }
 
         .nav-wrapper {
@@ -518,7 +534,7 @@
             font-size: 1rem;
             position: relative;
             padding: 5px 0;
-            transition: color 0.3s ease;
+            transition: color 0.45s ease;
             cursor: pointer;
         }
 
@@ -535,7 +551,7 @@
             height: 2px;
             background: var(--primary-gradient);
             border-radius: 5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
             transform: translateX(50%);
             box-shadow: 0 0 10px rgba(47, 111, 237, 0.6);
         }
@@ -562,12 +578,12 @@
         .theme-toggle:hover {
             border-color: var(--primary-cyan);
             box-shadow: 0 0 16px rgba(47, 111, 237, 0.3);
-            transform: rotate(-8deg) scale(1.06);
+            transform: rotate(-6deg) scale(1.05);
         }
 
         .theme-toggle i {
             position: absolute;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s ease;
         }
 
         .theme-icon-light { opacity: 0; transform: rotate(90deg) scale(0.5); }
@@ -638,16 +654,57 @@
             display: flex;
             align-items: flex-start;
             gap: 25px;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s, border-color 0.4s;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.6s ease;
             position: relative;
             text-decoration: none;
             color: inherit;
         }
 
         .card:hover {
-            transform: translate3d(0, -10px, 0);
-            border-color: rgba(47, 111, 237, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(47, 111, 237, 0.1);
+            transform: translate3d(0, -8px, 0);
+            border-color: rgba(47, 111, 237, 0.15);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5), 0 0 26px rgba(47, 111, 237, 0.12);
+        }
+
+        /* حلقه‌ی نور آبی که دقیقاً روی لبه‌ی خودِ کارت (با همون گوشه‌های گرد) حرکت می‌کند —
+           امضای هاور جدید سایت. شکلِ حلقه ثابت و چسبیده به قاب کارت می‌مونه؛ فقط
+           نورِ روشن روی همون مسیر می‌چرخه، نه کل لایه. */
+        .card,
+        .pack-item,
+        .mod-item,
+        .pack-download-btn,
+        .mod-download-btn {
+            --border-angle: 0deg;
+        }
+
+        .card::after,
+        .pack-item::after,
+        .mod-item::after,
+        .pack-download-btn::after,
+        .mod-download-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2.5px;
+            background: conic-gradient(from var(--border-angle), transparent 0%, transparent 78%, rgba(47, 111, 237, 0.35) 85%, #7db2ff 92%, var(--primary-cyan) 96%, #1435a1 100%);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.55s ease;
+            pointer-events: none;
+            z-index: 3;
+            filter: drop-shadow(0 0 5px rgba(47, 111, 237, 0.65));
+        }
+
+        .card:hover::after,
+        .pack-item:hover::after,
+        .mod-item:hover::after,
+        .pack-download-btn.available:hover::after,
+        .mod-download-btn.available:hover::after {
+            opacity: 1;
+            animation: travel-border 1.5s linear infinite;
         }
 
         /* رویکرد جدید: ترنسلیت فیزیکی یک دایو به جای محاسبه مداوم گرادیانت */
@@ -694,7 +751,7 @@
             border: 1px solid rgba(47, 111, 237, 0.2);
             position: relative;
             z-index: 2;
-            transition: var(--transition);
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), background 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
             overflow: hidden;
         }
 
@@ -705,10 +762,10 @@
         }
 
         .card:hover .card-graphic {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.05);
             background: var(--primary-gradient);
             color: var(--bg-darker);
-            box-shadow: 0 0 20px rgba(47, 111, 237, 0.45);
+            box-shadow: 0 0 24px rgba(47, 111, 237, 0.4);
         }
 
         .contact-cards-list {
@@ -747,7 +804,7 @@
         .card-title i {
             font-size: 1.2rem;
             color: var(--text-muted);
-            transition: transform 0.3s;
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), color 0.5s ease;
         }
 
         .card:hover .card-title i {
@@ -1054,6 +1111,7 @@
             transition: var(--transition);
             text-align: center;
             cursor: pointer;
+            position: relative;
         }
 
         .pack-item i {
@@ -1085,8 +1143,8 @@
 
         .pack-item:hover {
             transform: translateY(-6px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 8px 25px rgba(47, 111, 237, 0.25);
+            border-color: rgba(47, 111, 237, 0.15);
+            box-shadow: 0 12px 30px rgba(47, 111, 237, 0.18);
         }
 
         .pack-detail {
@@ -1168,6 +1226,7 @@
             color: var(--text-main);
             transition: var(--transition);
             cursor: pointer;
+            position: relative;
         }
 
         .pack-download-btn i { font-size: 2.2rem; }
@@ -1178,8 +1237,8 @@
 
         .pack-download-btn.available:hover {
             transform: translateY(-6px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 8px 25px rgba(47, 111, 237, 0.25);
+            border-color: rgba(47, 111, 237, 0.15);
+            box-shadow: 0 12px 30px rgba(47, 111, 237, 0.18);
             color: var(--primary-cyan);
         }
 
@@ -1223,12 +1282,13 @@
             text-align: center;
             color: var(--text-main);
             transition: var(--transition);
+            position: relative;
         }
 
         .mod-item:hover {
             transform: translateY(-6px);
-            border-color: var(--primary-cyan);
-            box-shadow: 0 8px 25px rgba(47, 111, 237, 0.25);
+            border-color: rgba(47, 111, 237, 0.15);
+            box-shadow: 0 12px 30px rgba(47, 111, 237, 0.18);
         }
 
         .mod-item i.mod-item-icon {
@@ -1257,6 +1317,7 @@
             background: transparent;
             color: var(--text-main);
             transition: var(--transition);
+            position: relative;
         }
 
         .mod-download-btn.available {
@@ -1265,9 +1326,9 @@
         }
 
         .mod-download-btn.available:hover {
-            border-color: var(--primary-cyan);
+            border-color: rgba(47, 111, 237, 0.15);
             color: var(--primary-cyan);
-            box-shadow: 0 4px 15px rgba(47, 111, 237, 0.25);
+            box-shadow: 0 6px 18px rgba(47, 111, 237, 0.2);
         }
 
         .mod-download-btn.disabled {
