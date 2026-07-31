@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T19:26:17Z",
+  "updatedAt": "2026-07-31T19:26:46Z",
   "packs": [
     {
       "name": "4sangre",
@@ -433,14 +433,6 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود بن تن/photo_2026-07-07_12-49-55.jpg",
-      "tested": false
-    },
-    {
-      "name": "مود ترسناک و ترند شده امروزی hors.jar",
-      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود ترسناک و ترند شده امروزی hors.jar/File/horse.jar%20.mcaddon",
-      "description": null,
-      "compatibility": "سازگار بدراک",
-      "icon": null,
       "tested": false
     },
     {
