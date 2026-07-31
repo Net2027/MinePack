@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T08:29:19Z",
+  "updatedAt": "2026-07-31T08:30:26Z",
   "packs": [
     {
       "name": "4sangre",
@@ -129,6 +129,14 @@
       "description": "نسخه 1.21.1 - نیازمند fabric api",
       "compatibility": "سازگار با جاوا",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/automobility (خودرو)/638352189201716584.png",
+      "tested": true
+    },
+    {
+      "name": "continuity",
+      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/continuity/File/continuity-3.0.0+1.21.jar",
+      "description": "نسخه 1.21.1",
+      "compatibility": "سازگار با جاوا",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/continuity/images%20(1).jpg",
       "tested": true
     },
     {
