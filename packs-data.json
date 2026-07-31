@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T10:15:30Z",
+  "updatedAt": "2026-07-31T11:40:27Z",
   "packs": [
     {
       "name": "4sangre",
@@ -649,6 +649,13 @@
   "films": [],
   "downloads": [],
   "contacts": [
+    {
+      "name": "ایمیل",
+      "description": "ارتباط با ما -- درخواست همکاری\r\nparsagolmahi91@gmail.com",
+      "link": "parsagolmahi91@gmail.com",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/ایمیل/images%20(2).jpg",
+      "tested": false
+    },
     {
       "name": "کانال ما در پیامرسان تلگرام",
       "description": "اخبار و اطلاع رسانی سایت در این کانال",
