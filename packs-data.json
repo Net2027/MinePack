@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T17:52:21Z",
+  "updatedAt": "2026-07-31T19:07:57Z",
   "packs": [
     {
       "name": "4sangre",
@@ -23,7 +23,7 @@
       "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Akatsuki/Bedrock/Akatsuki.rar",
       "description": "سازگار با نسخه 1.21 به بالا",
       "icon": null,
-      "tested": false
+      "tested": true
     },
     {
       "name": "Batman",
