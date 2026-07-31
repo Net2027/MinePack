@@ -1,9 +1,1 @@
-[
-  {
-    "id": "a71f5c091489450c8b7b29ef58c2d173",
-    "username": "hif",
-    "password_hash": "scrypt:32768:8:1$ndWtDf8SttCykOXB$eb1e6514c4445a9bcf23cc8a610069e70b2fa7af4be525156083fcd4ada36dbb739c1509d7ba1de46c576c5ca6bf07fa6b4789d3be4d8941dc872126f84df133",
-    "active": true,
-    "created_at": "2026-07-31T03:45:31Z"
-  }
-]
+[]
