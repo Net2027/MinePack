@@ -45,7 +45,7 @@
     "id": "5e885d6e93914faca404970e09365a58",
     "username": "Modir2029",
     "password_hash": "scrypt:32768:8:1$qsFxGjn5PpPbYMoT$447b20bc2973ff351a35e4f2da5c06c61bfd49fc2707a8d4151e252f995919a2242ee8b3b5d55f049f282536d63b8bab1b3327098e92746d9493418348989797",
-    "active": true,
+    "active": false,
     "created_at": "2026-07-31T19:29:10Z"
   }
 ]
