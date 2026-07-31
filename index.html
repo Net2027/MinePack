@@ -209,7 +209,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             .bg-glow { animation: none; transform: translate3d(-50%, -50%, 0); }
-            .card::after, .pack-item::after, .mod-item::after, .contact-cards-list .card::after { animation: none !important; }
+            .card::after, .pack-item::after, .mod-item::after, .contact-cards-list .card::after, header::after { animation: none !important; }
         }
 
         /* حلقه‌ی نور چرخان دور کارت‌ها — جایگزین ظریف و لوکس به‌جای زوم شدن
@@ -489,6 +489,24 @@
             border-radius: 20px;
             position: relative;
             z-index: 100;
+            --border-angle: 0deg;
+        }
+
+        /* همون افکت نور آبی چرخان دور کارت‌ها، این‌بار به‌صورت دائمی روی هدر */
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2.5px;
+            background: conic-gradient(from var(--border-angle), transparent 0%, transparent 78%, rgba(47, 111, 237, 0.35) 85%, #7db2ff 92%, var(--primary-cyan) 96%, #1435a1 100%);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 3;
+            filter: drop-shadow(0 0 5px rgba(47, 111, 237, 0.65));
+            animation: travel-border 3.5s linear infinite;
         }
 
         .logo-section {
