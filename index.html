@@ -105,13 +105,21 @@
 
         html[data-theme="light"] .fixed-bg {
             background:
-                linear-gradient(rgba(245, 248, 255, 0.88), rgba(231, 237, 251, 0.96)),
-                url('page.jpg') no-repeat center center;
-            background-size: cover;
+                radial-gradient(120% 90% at 12% -10%, rgba(29, 78, 216, 0.16) 0%, transparent 55%),
+                radial-gradient(100% 80% at 92% 4%, rgba(13, 143, 92, 0.10) 0%, transparent 58%),
+                radial-gradient(90% 90% at 78% 96%, rgba(13, 47, 122, 0.14) 0%, transparent 60%),
+                linear-gradient(180deg, #f7faff 0%, var(--bg-dark) 100%);
+        }
+
+        html[data-theme="light"] .fixed-bg::after {
+            background:
+                linear-gradient(rgba(13, 47, 122, 0.055) 1px, transparent 1px) 0 0 / 100% 64px,
+                linear-gradient(90deg, rgba(13, 47, 122, 0.055) 1px, transparent 1px) 0 0 / 64px 100%,
+                radial-gradient(115% 85% at 50% 42%, transparent 45%, rgba(180, 196, 230, 0.40) 100%);
         }
 
         html[data-theme="light"] .bg-glow {
-            background: radial-gradient(circle, rgba(29, 78, 216, 0.10) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(29, 78, 216, 0.13) 0%, rgba(29, 78, 216, 0.04) 42%, transparent 70%);
         }
 
         html[data-theme="light"] ::-webkit-scrollbar-thumb {
@@ -150,29 +158,56 @@
             position: relative;
         }
 
+        /* پس‌زمینه مدرن: مش گرادیانتی (aurora) کاملاً CSS — بدون تصویر */
         .fixed-bg {
             position: fixed;
             inset: 0;
-            background: 
-                linear-gradient(rgba(6, 9, 16, 0.82), rgba(4, 6, 12, 0.95)),
-                url('page.jpg') no-repeat center center;
-            background-size: cover;
+            background:
+                radial-gradient(120% 90% at 12% -10%, rgba(47, 111, 237, 0.30) 0%, transparent 55%),
+                radial-gradient(100% 80% at 92% 4%, rgba(31, 174, 118, 0.16) 0%, transparent 58%),
+                radial-gradient(90% 90% at 78% 96%, rgba(20, 53, 161, 0.34) 0%, transparent 60%),
+                radial-gradient(70% 70% at 26% 88%, rgba(125, 178, 255, 0.10) 0%, transparent 62%),
+                linear-gradient(180deg, #080c17 0%, var(--bg-darker) 100%);
             z-index: -3;
             pointer-events: none;
-            /* ارتقا لایه بکگراند برای جلوگیری از Repaint */
             transform: translateZ(0);
+        }
+
+        /* توری نازک + وینیت برای عمق */
+        .fixed-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(147, 160, 194, 0.05) 1px, transparent 1px) 0 0 / 100% 64px,
+                linear-gradient(90deg, rgba(147, 160, 194, 0.05) 1px, transparent 1px) 0 0 / 64px 100%,
+                radial-gradient(115% 85% at 50% 42%, transparent 42%, rgba(2, 4, 9, 0.72) 100%);
+            mask-image: radial-gradient(125% 95% at 50% 30%, #000 35%, transparent 88%);
+            -webkit-mask-image: radial-gradient(125% 95% at 50% 30%, #000 35%, transparent 88%);
         }
 
         .bg-glow {
             position: fixed;
-            top: 20%;
+            top: 18%;
             left: 50%;
-            transform: translate3d(-50%, -50%, 0);
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(47, 111, 237, 0.15) 0%, transparent 70%);
+            width: 68vw;
+            height: 68vw;
+            background: radial-gradient(circle, rgba(47, 111, 237, 0.20) 0%, rgba(47, 111, 237, 0.06) 42%, transparent 70%);
+            filter: blur(28px);
             z-index: -1;
             pointer-events: none;
+            will-change: transform;
+            animation: auroraDrift 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraDrift {
+            0%   { transform: translate3d(-52%, -50%, 0) scale(1); }
+            50%  { transform: translate3d(-46%, -44%, 0) scale(1.10); }
+            100% { transform: translate3d(-55%, -53%, 0) scale(1.04); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-glow { animation: none; transform: translate3d(-50%, -50%, 0); }
         }
 
         #loader-wrapper {
