@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T06:24:47Z",
+  "updatedAt": "2026-08-01T06:32:46Z",
   "packs": [
     {
       "name": "4sangre",
@@ -56,6 +56,14 @@
       "description": "سازگار با نسخه 1.21 به بالا",
       "icon": null,
       "tested": true
+    },
+    {
+      "name": "Polar Wind",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Polar%20Wind/Bedrock/Polar%20Wind%20%5B16x%5D.mcpack",
+      "description": null,
+      "icon": null,
+      "tested": false
     },
     {
       "name": "Rigel",
