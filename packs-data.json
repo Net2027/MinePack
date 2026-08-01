@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T06:32:46Z",
+  "updatedAt": "2026-08-01T06:33:09Z",
   "packs": [
     {
       "name": "4sangre",
@@ -61,6 +61,14 @@
       "name": "Polar Wind",
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Polar%20Wind/Bedrock/Polar%20Wind%20%5B16x%5D.mcpack",
+      "description": null,
+      "icon": null,
+      "tested": false
+    },
+    {
+      "name": "Ranked  Faith",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Ranked%20%20Faith/Bedrock/Ranked%20Faith.mcpack",
       "description": null,
       "icon": null,
       "tested": false
