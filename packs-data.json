@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T09:02:18Z",
+  "updatedAt": "2026-08-01T09:03:34Z",
   "packs": [
     {
       "name": "4sangre",
@@ -665,6 +665,14 @@
       "name": "اکشن اند استاف 1.11(جدید ترین نسخه )",
       "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Shader/اکشن اند استاف 1.11(جدید ترین نسخه )/File/Actions%20Stuff%201.11",
       "description": "نسخه 1.26.30 به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": null,
+      "tested": false
+    },
+    {
+      "name": "شیدر برای بهتر کردن کیفیت ماینکرافت",
+      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Shader/شیدر برای بهتر کردن کیفیت ماینکرافت/File/§9 [ §k §9 Cookie 8x §k §9 ] bedrak mc.mcpack",
+      "description": "بدراک1.21به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": null,
       "tested": false
