@@ -33,12 +33,5 @@
     "password_hash": "scrypt:32768:8:1$fMO7DaxbRzHO0tNC$589ee96a77cba0b5110b517f719fa3ab08d8857e5614714b3c19dfb87f5a39e21dfb78ec3150ef9b46555eb67faf04e3dbf83e13d1002a87415518bbb46d4280",
     "active": true,
     "created_at": "2026-07-31T18:16:37Z"
-  },
-  {
-    "id": "5e885d6e93914faca404970e09365a58",
-    "username": "Modir2029",
-    "password_hash": "scrypt:32768:8:1$qsFxGjn5PpPbYMoT$447b20bc2973ff351a35e4f2da5c06c61bfd49fc2707a8d4151e252f995919a2242ee8b3b5d55f049f282536d63b8bab1b3327098e92746d9493418348989797",
-    "active": false,
-    "created_at": "2026-07-31T19:29:10Z"
   }
 ]
