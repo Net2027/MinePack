@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T15:25:16Z",
+  "updatedAt": "2026-08-02T15:25:34Z",
   "packs": [
     {
       "name": "4sangre",
@@ -775,13 +775,6 @@
   "downloads": [],
   "contacts": [
     {
-      "name": ";hkhg ما در یوتیوب",
-      "description": null,
-      "link": "@minepack44",
-      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/;hkhg ما در یوتیوب/Screenshot%20(405).png",
-      "tested": false
-    },
-    {
       "name": "ایمیل",
       "description": "ارتباط با ما -- درخواست همکاری\r\nparsagolmahi91@gmail.com",
       "link": "parsagolmahi91@gmail.com",
@@ -807,6 +800,13 @@
       "description": "اخبار و اطلاع رسانی سایت در این کانال",
       "link": "https://rubika.ir/pack_405",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/کانال ما در پیامرسان روبیکا/images%20(3).jpg",
+      "tested": false
+    },
+    {
+      "name": "کانال ما در یوتیوب",
+      "description": null,
+      "link": "@minepack44",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/کانال ما در یوتیوب/Screenshot%20(405).png",
       "tested": false
     }
   ]
