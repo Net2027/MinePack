@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T07:34:02Z",
+  "updatedAt": "2026-08-02T07:34:27Z",
   "packs": [
     {
       "name": "4sangre",
@@ -44,7 +44,7 @@
       "description": "سازگار با نسخه 1.21 به بالا",
       "icon": null,
       "tested": true,
-      "featured": false
+      "featured": true
     },
     {
       "name": "Jason voorhees",
