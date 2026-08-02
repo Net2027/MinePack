@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T04:51:14Z",
+  "updatedAt": "2026-08-02T04:53:44Z",
   "packs": [
     {
       "name": "4sangre",
@@ -145,7 +145,7 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/1000ماموریت/photo_2026-07-23_09-15-54.jpg",
       "tested": true,
-      "featured": false
+      "featured": true
     },
     {
       "name": "Fabric Api",
