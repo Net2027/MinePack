@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T04:53:44Z",
+  "updatedAt": "2026-08-02T04:54:11Z",
   "packs": [
     {
       "name": "4sangre",
@@ -172,7 +172,7 @@
       "compatibility": "سازگار با جاوا",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/automobility (خودرو)/638352189201716584.png",
       "tested": true,
-      "featured": false
+      "featured": true
     },
     {
       "name": "continuity",
