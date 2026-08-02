@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T04:54:11Z",
+  "updatedAt": "2026-08-02T07:33:10Z",
   "packs": [
     {
       "name": "4sangre",
@@ -360,8 +360,8 @@
       "description": "نسخه 1.20 به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/ساخت اتاق گیمینگ و وسایل گیمینگ/photo_2026-07-21_10-50-00.jpg",
-      "tested": false,
-      "featured": false
+      "tested": true,
+      "featured": true
     },
     {
       "name": "ساخت ماشین",
