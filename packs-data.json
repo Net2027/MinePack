@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T07:36:27Z",
+  "updatedAt": "2026-08-02T07:37:19Z",
   "packs": [
     {
       "name": "4sangre",
@@ -586,15 +586,6 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود فوتبال برای ماینکرافت/photo_2026-07-13_22-06-35%20(1).jpg",
       "tested": true,
-      "featured": false
-    },
-    {
-      "name": "مود فوق ترسناک و ترند شده امروزی hors.jar",
-      "file": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/مود فوق ترسناک و ترند شده امروزی hors.jar/File/horse.jar%20.mcaddon",
-      "description": "بدراک 1.26.30",
-      "compatibility": "سازگار بدراک",
-      "icon": null,
-      "tested": false,
       "featured": false
     },
     {
