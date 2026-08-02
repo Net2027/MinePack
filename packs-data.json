@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T07:34:56Z",
+  "updatedAt": "2026-08-02T07:36:27Z",
   "packs": [
     {
       "name": "4sangre",
@@ -649,7 +649,7 @@
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/هاردکور در سرزمین اژدهایان/maxresdefault.jpg",
       "tested": true,
-      "featured": false
+      "featured": true
     },
     {
       "name": "هواپیما و هلیکوپتر",
