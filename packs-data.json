@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T15:23:38Z",
+  "updatedAt": "2026-08-02T15:23:55Z",
   "packs": [
     {
       "name": "4sangre",
@@ -132,6 +132,15 @@
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/Venom/Bedrock/Venom16x.rar",
       "description": "سازگار با نسخه 1.21 به بالا",
+      "icon": null,
+      "tested": false,
+      "featured": false
+    },
+    {
+      "name": "دویر 70k",
+      "java": "https://raw.githubusercontent.com/Net2027/MinePack/main/Pack/دویر 70k/Java/!       §9Dewier §7[§e70k§7].zip",
+      "bedrock": null,
+      "description": "ریسور پک بدواررز دویر به مناسبت 70کی شدن چنلش مخصوص  1.8.9",
       "icon": null,
       "tested": false,
       "featured": false
