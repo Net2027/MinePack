@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T12:04:27Z",
+  "updatedAt": "2026-08-02T13:09:32Z",
   "packs": [
     {
       "name": "4sangre",
@@ -756,6 +756,13 @@
   "films": [],
   "downloads": [],
   "contacts": [
+    {
+      "name": "اکانت رسمی ما در یوتیوب",
+      "description": null,
+      "link": "@minepack44",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/اکانت رسمی ما در یوتیوب/Screenshot%20(405).png",
+      "tested": false
+    },
     {
       "name": "ایمیل",
       "description": "ارتباط با ما -- درخواست همکاری\r\nparsagolmahi91@gmail.com",
