@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T15:25:34Z",
+  "updatedAt": "2026-08-02T18:02:31Z",
   "packs": [
     {
       "name": "4sangre",
@@ -163,7 +163,7 @@
       "compatibility": "سازگار با جاوا",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/Fabric%20Api/images.png",
       "tested": true,
-      "featured": false
+      "featured": true
     },
     {
       "name": "Lucky-SkyBlock",
