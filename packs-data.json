@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T07:34:27Z",
+  "updatedAt": "2026-08-02T07:34:56Z",
   "packs": [
     {
       "name": "4sangre",
@@ -162,8 +162,8 @@
       "description": "بدراک 1.20 به بالا",
       "compatibility": "سازگار بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Mod/Lucky-SkyBlock/com.StusioCraftStudio.LuckySkyBlock_444bdf4d-51f9-4afd-812e-53235a2ab064.png",
-      "tested": false,
-      "featured": false
+      "tested": true,
+      "featured": true
     },
     {
       "name": "automobility (خودرو)",
