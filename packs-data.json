@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T08:08:37Z",
+  "updatedAt": "2026-08-02T08:09:55Z",
   "packs": [
     {
       "name": "4sangre",
@@ -768,6 +768,13 @@
       "description": "ارتباط با ما -- درخواست همکاری\r\nparsagolmahi91@gmail.com",
       "link": "parsagolmahi91@gmail.com",
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/ایمیل/images%20(2).jpg",
+      "tested": false
+    },
+    {
+      "name": "کانال  ما در آپارات",
+      "description": null,
+      "link": "http://aparat.com/HIHIHIHIHU",
+      "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/کانال  ما در آپارات/Screenshot%20(403).png",
       "tested": false
     },
     {
