@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ماین پک | مرجع تخصصی ماینکرفت</title>
+    <title>پک کرافت | مرجع تخصصی ماینکرفت</title>
     
     <!-- آیکون‌های Phosphor با ویژگی defer -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
@@ -14,13 +14,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- تعیین تم (روشن/تاریک) پیش از رندر صفحه، برای جلوگیری از پرش رنگی -->
+    <!-- پیش‌فرض: حالت روشن -->
     <script>
         (function () {
             try {
-                var saved = localStorage.getItem('minepack_theme');
-                var theme = saved === 'light' ? 'light' : 'dark';
+                var saved = localStorage.getItem('packcraft_theme');
+                var theme = saved === 'dark' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', theme);
-            } catch (e) {}
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
         })();
     </script>
 
@@ -75,6 +78,7 @@
             --primary-blue: #1435a1;   /* آبی تیره‌تر برای گرادیانت */
             --emerald: #1fae76;
             --emerald-soft: rgba(31, 174, 118, 0.15);
+            --violet: #7c3aed;
             --primary-gradient: linear-gradient(135deg, #7db2ff 0%, #2f6fed 55%, #1435a1 100%);
 
             --glass-bg: rgba(8, 12, 22, 0.62);
@@ -96,6 +100,7 @@
             --primary-blue: #0d2f7a;
             --emerald: #0d8f5c;
             --emerald-soft: rgba(13, 143, 92, 0.12);
+            --violet: #6d28d9;
             --primary-gradient: linear-gradient(135deg, #4f7fe0 0%, #1d4ed8 55%, #0d2f7a 100%);
 
             --glass-bg: rgba(255, 255, 255, 0.72);
@@ -105,9 +110,43 @@
 
         html[data-theme="light"] .fixed-bg {
             background:
-                linear-gradient(rgba(245, 248, 255, 0.88), rgba(231, 237, 251, 0.96)),
-                url('page.jpg') no-repeat center center;
-            background-size: cover;
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(29, 78, 216, 0.16) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 85% 100%, rgba(13, 143, 92, 0.12) 0%, transparent 70%),
+                linear-gradient(180deg, #f6f9ff 0%, #e7edfb 55%, #dde6f8 100%);
+        }
+
+        html[data-theme="light"] .bg-grid {
+            background-image:
+                linear-gradient(rgba(29, 78, 216, 0.10) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(29, 78, 216, 0.10) 1px, transparent 1px);
+            opacity: 0.75;
+        }
+
+        html[data-theme="light"] .bg-voxel { opacity: 0.28; }
+        html[data-theme="light"] .bg-pixel { opacity: 0.5; }
+
+        /* در حالت روشن، شفق باید خیلی ملایم‌تر باشه وگرنه متن رو کدر می‌کنه */
+        html[data-theme="light"] .bg-aurora { opacity: 0.55; }
+
+        /* اسکن‌لاین سفید روی پس‌زمینه روشن دیده نمی‌شه — به خطوط تیره تغییر می‌کنه */
+        html[data-theme="light"] .bg-scanlines {
+            background: repeating-linear-gradient(
+                180deg,
+                rgba(13, 21, 38, 0.030) 0px,
+                rgba(13, 21, 38, 0.030) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            opacity: 0.45;
+        }
+
+        html[data-theme="light"] .progress-track {
+            background: rgba(20, 40, 100, 0.10);
+            box-shadow: inset 0 2px 4px rgba(20, 40, 100, 0.14);
+        }
+
+        html[data-theme="light"] .card:hover {
+            box-shadow: 0 20px 40px rgba(20, 40, 100, 0.16), 0 0 20px rgba(29, 78, 216, 0.10);
         }
 
         html[data-theme="light"] .bg-glow {
@@ -143,6 +182,8 @@
         body {
             font-family: var(--font-family);
             color: var(--text-main);
+            /* رنگ پشتیبان: اگر لایه‌های بکگراند رندر نشدن، صفحه سفید نمی‌مونه */
+            background: var(--bg-dark);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -150,17 +191,178 @@
             position: relative;
         }
 
+        /* ===== لایه‌های بکگراند گیمینگ (کاملاً CSS، بدون تصویر) ===== */
+
+        /* ۱) پایه: گرادیانت عمقی شب‌رنگ */
         .fixed-bg {
             position: fixed;
             inset: 0;
-            background: 
-                linear-gradient(rgba(6, 9, 16, 0.82), rgba(4, 6, 12, 0.95)),
-                url('page.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -3;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(47, 111, 237, 0.22) 0%, transparent 65%),
+                radial-gradient(ellipse 60% 50% at 85% 105%, rgba(31, 174, 118, 0.16) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 45% at 10% 80%, rgba(124, 58, 237, 0.16) 0%, transparent 65%),
+                linear-gradient(180deg, #070b16 0%, #04060c 55%, #02040a 100%);
+            z-index: -6;
             pointer-events: none;
             /* ارتقا لایه بکگراند برای جلوگیری از Repaint */
             transform: translateZ(0);
+        }
+
+        /* ۲) شبکه پیکسلی متحرک — حس دنیای بلوکی ماینکرفت */
+        .bg-grid {
+            position: fixed;
+            inset: -50% -50%;
+            width: 200%;
+            height: 200%;
+            background-image:
+                linear-gradient(rgba(47, 111, 237, 0.13) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(47, 111, 237, 0.13) 1px, transparent 1px);
+            background-size: 44px 44px;
+            z-index: -5;
+            pointer-events: none;
+            transform: translate3d(0, 0, 0);
+            animation: grid-drift 24s linear infinite;
+            mask-image: radial-gradient(ellipse 65% 55% at 50% 40%, #000 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 40%, #000 0%, transparent 100%);
+        }
+
+        @keyframes grid-drift {
+            0%   { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-44px, -44px, 0); }
+        }
+
+        /* ۳) بلوک‌های شناور ووکسل — آجرهای معلق در فضا */
+        .bg-voxel {
+            position: fixed;
+            inset: 0;
+            z-index: -4;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-voxel span {
+            position: absolute;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border: 1px solid rgba(47, 111, 237, 0.35);
+            background: linear-gradient(135deg, rgba(47, 111, 237, 0.16), rgba(47, 111, 237, 0.03));
+            box-shadow: inset 0 0 12px rgba(47, 111, 237, 0.18);
+            border-radius: 4px;
+            animation: voxel-float 18s ease-in-out infinite;
+            will-change: transform, opacity;
+        }
+
+        .bg-voxel span:nth-child(1)  { top: 12%; left:  8%; animation-delay: 0s;    }
+        .bg-voxel span:nth-child(2)  { top: 26%; left: 78%; animation-delay: -3s;  width: 18px; height: 18px; }
+        .bg-voxel span:nth-child(3)  { top: 62%; left: 15%; animation-delay: -6s;  width: 34px; height: 34px; }
+        .bg-voxel span:nth-child(4)  { top: 78%; left: 68%; animation-delay: -9s;  }
+        .bg-voxel span:nth-child(5)  { top: 42%; left: 46%; animation-delay: -12s; width: 16px; height: 16px; }
+        .bg-voxel span:nth-child(6)  { top: 86%; left: 32%; animation-delay: -15s; width: 22px; height: 22px; }
+
+        /* بلوک‌های زمردی برای تنوع رنگی */
+        .bg-voxel span:nth-child(3),
+        .bg-voxel span:nth-child(6) {
+            border-color: rgba(31, 174, 118, 0.35);
+            background: linear-gradient(135deg, rgba(31, 174, 118, 0.16), rgba(31, 174, 118, 0.03));
+            box-shadow: inset 0 0 12px rgba(31, 174, 118, 0.18);
+        }
+
+        @keyframes voxel-float {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg);       opacity: 0.25; }
+            50%      { transform: translate3d(0, -46px, 0) rotate(180deg); opacity: 0.7;  }
+        }
+
+        /* ۴) شفق قطبی — دو لکه نوری که آرام نفس می‌کشند */
+        .bg-aurora {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            pointer-events: none;
+            overflow: hidden;
+            filter: blur(70px);
+        }
+
+        .bg-aurora span {
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            will-change: transform;
+        }
+
+        .bg-aurora span:nth-child(1) {
+            top: -12%;
+            right: -8%;
+            width: 46vw;
+            height: 46vw;
+            background: radial-gradient(circle, rgba(47, 111, 237, 0.30) 0%, transparent 70%);
+            animation: aurora-drift-a 20s ease-in-out infinite;
+        }
+
+        .bg-aurora span:nth-child(2) {
+            bottom: -18%;
+            left: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.24) 0%, transparent 70%);
+            animation: aurora-drift-b 26s ease-in-out infinite;
+        }
+
+        @keyframes aurora-drift-a {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50%      { transform: translate3d(-6vw, 5vh, 0) scale(1.18); }
+        }
+
+        @keyframes aurora-drift-b {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); }
+            50%      { transform: translate3d(7vw, -6vh, 0) scale(1); }
+        }
+
+        /* ۵) اسکن‌لاین CRT — بافت ظریف مانیتور قدیمی */
+        .bg-scanlines {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.022) 0px,
+                rgba(255, 255, 255, 0.022) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            opacity: 0.6;
+        }
+
+        /* ۶) ذرات پیکسلی چشمک‌زن */
+        .bg-pixel {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-pixel span {
+            position: absolute;
+            display: block;
+            width: 3px;
+            height: 3px;
+            background: var(--primary-cyan);
+            box-shadow: 0 0 8px 1px rgba(47, 111, 237, 0.85);
+            animation: pixel-blink 4.5s ease-in-out infinite;
+        }
+
+        .bg-pixel span:nth-child(1) { top: 18%; left: 24%; animation-delay: 0s;    }
+        .bg-pixel span:nth-child(2) { top: 34%; left: 88%; animation-delay: -0.9s; background: var(--emerald); box-shadow: 0 0 8px 1px rgba(31, 174, 118, 0.85); }
+        .bg-pixel span:nth-child(3) { top: 56%; left: 62%; animation-delay: -1.8s; }
+        .bg-pixel span:nth-child(4) { top: 72%; left: 12%; animation-delay: -2.7s; background: var(--violet); box-shadow: 0 0 8px 1px rgba(124, 58, 237, 0.85); }
+        .bg-pixel span:nth-child(5) { top: 88%; left: 82%; animation-delay: -3.6s; }
+        .bg-pixel span:nth-child(6) { top:  8%; left: 54%; animation-delay: -4.2s; background: var(--emerald); box-shadow: 0 0 8px 1px rgba(31, 174, 118, 0.85); }
+
+        @keyframes pixel-blink {
+            0%, 100% { opacity: 0;   transform: scale(0.5); }
+            50%      { opacity: 0.9; transform: scale(1.4); }
         }
 
         .bg-glow {
@@ -430,11 +632,12 @@
         header {
             max-width: 1300px;
             width: 92%;
-            margin: 30px auto 0 auto;
+            margin: clamp(16px, 3vw, 30px) auto 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            gap: 16px;
+            padding: clamp(12px, 1.6vw, 15px) clamp(16px, 2.5vw, 30px);
             border-radius: 20px;
             position: relative;
             z-index: 100;
@@ -450,8 +653,8 @@
         }
 
         .logo-section img {
-            height: 80px;
-            width: 80px;
+            height: clamp(52px, 7vw, 80px);
+            width: clamp(52px, 7vw, 80px);
             object-fit: contain;
             padding: 6px;
             border-radius: 50%;
@@ -546,10 +749,10 @@
             max-width: 1300px;
             width: 92%;
             margin: auto;
-            padding: 60px 0;
+            padding: clamp(30px, 5vw, 60px) 0;
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: clamp(32px, 5vw, 60px);
             z-index: 10;
         }
 
@@ -572,10 +775,12 @@
 
         .hero-section h1 {
             font-family: var(--font-display);
-            font-size: 3.5rem;
+            /* تیتر سیال: از موبایل تا دسکتاپ نرم مقیاس می‌گیره */
+            font-size: clamp(1.9rem, 6vw, 3.5rem);
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
+            overflow-wrap: break-word;
         }
 
         .hero-section h1 span {
@@ -593,16 +798,17 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+            /* min() جلوی سرریز افقی رو در عرض‌های بین ۶۰۰ تا ۸۰۰ پیکسل می‌گیره */
+            grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+            gap: clamp(18px, 2.5vw, 30px);
         }
 
         .card {
-            border-radius: 24px; 
-            padding: 40px;
+            border-radius: 24px;
+            padding: clamp(24px, 3.5vw, 40px);
             display: flex;
             align-items: flex-start;
-            gap: 25px;
+            gap: clamp(16px, 2.5vw, 25px);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s, border-color 0.4s;
             position: relative;
             text-decoration: none;
@@ -1345,12 +1551,26 @@
             color: var(--primary-cyan);
         }
 
+        /* ===== تبلت و لپ‌تاپ کوچک ===== */
+        @media (max-width: 1100px) {
+            nav ul { gap: 22px; }
+            nav a { font-size: 0.95rem; }
+            .nav-wrapper { gap: 24px; }
+        }
+
         @media (max-width: 992px) {
             header { flex-direction: column; gap: 20px; padding: 20px; }
             .nav-wrapper { flex-direction: column; gap: 20px; width: 100%; justify-content: center; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .hero-section h1 { font-size: 2.5rem; }
             footer { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        /* ===== بین موبایل و تبلت: کارت‌ها تک‌ستونه بشن تا سرریز نشن ===== */
+        @media (max-width: 800px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .packs-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+            .pack-download-buttons { gap: 14px; }
+            .pack-download-btn { min-width: 160px; flex: 1 1 160px; padding: 24px 18px; }
         }
 
         @media (max-width: 600px) {
@@ -1358,6 +1578,27 @@
             .card { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
             .card-title { justify-content: center; }
             .card-title i { display: none; }
+
+            main { width: 94%; }
+            header { width: 94%; }
+            footer { width: 94%; padding: 22px 20px; }
+
+            nav ul { gap: 12px 14px; }
+            nav a { font-size: 0.92rem; }
+
+            .loader-container { padding: 36px 22px; }
+            .brand-title { font-size: 1.5rem; }
+            .site-search-box { max-width: 100%; }
+
+            /* روی موبایل بکگراند سبک‌تر می‌شه تا باتری و FPS حفظ بشه */
+            .bg-grid { background-size: 32px 32px; }
+            .bg-voxel span:nth-child(4),
+            .bg-voxel span:nth-child(5),
+            .bg-voxel span:nth-child(6) { display: none; }
+            .bg-pixel span:nth-child(5),
+            .bg-pixel span:nth-child(6) { display: none; }
+            .bg-aurora { filter: blur(50px); }
+            .bg-scanlines { display: none; }
 
             /* کارت‌های داخل تب‌ها (پک/مود/شیدر/دانلود/فیلم) توی موبایل کوچیک‌تر و دوستونه بشن */
             .packs-grid {
@@ -1406,12 +1647,71 @@
                 gap: 4px;
             }
         }
+
+        /* ===== موبایل‌های خیلی باریک ===== */
+        @media (max-width: 380px) {
+            .packs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .pack-download-btn { min-width: 100%; }
+            .guide-path { font-size: 0.82rem; }
+        }
+
+        /* ===== دسترسی‌پذیری: وضعیت فوکوس برای پیمایش با کیبورد ===== */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--primary-cyan);
+            outline-offset: 3px;
+            border-radius: 8px;
+        }
+
+        /* ===== احترام به تنظیم «کاهش انیمیشن» سیستم کاربر ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .bg-grid,
+            .bg-voxel span,
+            .bg-aurora span {
+                animation: none !important;
+            }
+
+            .bg-voxel span { opacity: 0.45; }
+            .bg-pixel span { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
 
     <!-- لایه‌های زیرین تماماً از ترنسفورم و شتابدهنده سخت افزاری استفاده می‌کنند -->
     <div class="fixed-bg"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-voxel">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="bg-aurora">
+        <span></span>
+        <span></span>
+    </div>
+    <div class="bg-scanlines"></div>
+    <div class="bg-pixel">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <div class="bg-glow"></div>
 
     <!-- کانتینر لودینگ -->
@@ -1426,9 +1726,9 @@
             <span class="loader-sparkle s3"></span>
 
             <div class="loader-logo-wrapper">
-                <img src="main.png" alt="ماین پک" class="loader-logo">
+                <img src="main.png" alt="پک کرافت" class="loader-logo">
             </div>
-            <h1 class="brand-title">ماین پک</h1>
+            <h1 class="brand-title">پک کرافت</h1>
             <div class="status-text" id="loader-status">در حال ساخت دنیا</div>
             <div class="progress-track">
                 <div class="progress-fill"></div>
@@ -1443,7 +1743,7 @@
     <!-- هدر سایت -->
     <header class="animate-up delay-1">
         <div class="logo-section">
-            <img src="main.png" alt="ماین پک">
+            <img src="main.png" alt="پک کرافت">
         </div>
         <div class="nav-wrapper">
             <nav>
@@ -1540,7 +1840,7 @@
                     </div>
                     <div class="card-info">
                         <h2 class="card-title">درباره ما <i class="ph-bold ph-arrow-left"></i></h2>
-                        <p class="card-desc">با تیم ماین پک و هدفمون از ساخت این پلتفرم بیشتر آشنا بشید.</p>
+                        <p class="card-desc">با تیم پک کرافت و هدفمون از ساخت این پلتفرم بیشتر آشنا بشید.</p>
                     </div>
                 </a>
 
@@ -1657,7 +1957,7 @@
 
                 <h4>مرحله ۲: دانلود مود</h4>
                 <ol>
-                    <li>مود مورد نظر خود را از سایت ماین پک دانلود کنید.</li>
+                    <li>مود مورد نظر خود را از سایت پک کرافت دانلود کنید.</li>
                     <li>فایل مود معمولاً با پسوند <code>.jar</code> است.</li>
                 </ol>
                 <div class="guide-note is-warning">
@@ -1751,7 +2051,7 @@
 
                 <div class="guide-outro">
                     <p>حالا می‌توانید مودهای مورد علاقه خود را نصب کنید و تجربه ماینکرفت را شخصی‌سازی کنید! 🎮</p>
-                    <p>ماین پک — مرجع دانلود مود، شیدر و ریسورس پک ماینکرفت</p>
+                    <p>پک کرافت — مرجع دانلود مود، شیدر و ریسورس پک ماینکرفت</p>
                 </div>
             </div>
         </div>
@@ -1762,7 +2062,7 @@
                 <i class="ph-fill ph-users-three"></i>
                 <h2>درباره ما</h2>
                 <p>
-                    «ماین پک» حاصل تلاش تیمی کوچک از برنامه‌نویسان حرفه‌ای است که با علاقه‌ی واقعی به دنیای ماینکرفت شکل گرفته؛
+                    «پک کرافت» حاصل تلاش تیمی کوچک از برنامه‌نویسان حرفه‌ای است که با علاقه‌ی واقعی به دنیای ماینکرفت شکل گرفته؛
                     جایی که تخصص فنی در کنار عشق به بازی، یک هدف مشترک را دنبال می‌کند: ساده‌تر، سریع‌تر و لذت‌بخش‌تر کردن تجربه‌ی بازی برای هر کاربر ایرانی.
                 </p>
                 <p>
@@ -1774,7 +2074,7 @@
                     این پلتفرم هنوز در مسیر رشد است و هر روز با امکانات و محتوای تازه‌تری به‌روزرسانی می‌شود.
                 </p>
                 <p>
-                    اگر پیشنهاد، انتقاد یا ایده‌ای برای بهتر شدن «ماین پک» دارید، خوشحال می‌شویم صدای شما را بشنویم —
+                    اگر پیشنهاد، انتقاد یا ایده‌ای برای بهتر شدن «پک کرافت» دارید، خوشحال می‌شویم صدای شما را بشنویم —
                     چون این پلتفرم برای شماست و با همراهی شما بهتر می‌شود.
                 </p>
             </div>
@@ -1799,7 +2099,7 @@
     <!-- فوتر -->
     <footer class="animate-up delay-3">
         <div class="footer-rights">
-            تمامی حقوق برای <strong>ماین پک</strong> محفوظ است - ۱۴۰۵
+            تمامی حقوق برای <strong>پک کرافت</strong> محفوظ است - ۱۴۰۵
         </div>
     </footer>
 
@@ -1868,7 +2168,7 @@
                 const isLight = document.documentElement.getAttribute('data-theme') === 'light';
                 const next = isLight ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', next);
-                try { localStorage.setItem('minepack_theme', next); } catch (e) {}
+                try { localStorage.setItem('packcraft_theme', next); } catch (e) {}
             });
         })();
 
@@ -1898,7 +2198,7 @@
 
         // ===== آدرس بک‌اند روی Railway =====
         // این آدرس رو با آدرس واقعی بک‌اندت (بعد از دیپلوی روی Railway) جایگزین کن.
-        // مثال: 'https://minepack-backend-production.up.railway.app'
+        // مثال: 'https://packcraft-backend-production.up.railway.app'
         const API_BASE = 'https://web-production-b6b4a.up.railway.app'; // فقط برای ورود/ثبت‌نام کاربر و پنل ادمین استفاده می‌شه
 
         // ===== گرفتن اطلاعات سایت (پک/مود/شیدر/فیلم) با کش ۱ ساعته توی مرورگر =====
@@ -1978,7 +2278,7 @@
         // تابع مشترک: نشان «پیشنهاد سردبیر» — فقط وقتی از پنل ادمین روشن شده باشه نشون داده می‌شه
         function renderFeaturedBadge(item) {
             if (item && item.featured) {
-                return `<span class="featured-badge"><i class="ph-fill ph-medal"></i><span>پیشنهاد شده توسط سردبیر<span class="featured-badge-line2">ماین پک</span></span></span>`;
+                return `<span class="featured-badge"><i class="ph-fill ph-medal"></i><span>پیشنهاد شده توسط سردبیر<span class="featured-badge-line2">پک کرافت</span></span></span>`;
             }
             return '';
         }
