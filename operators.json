@@ -24,7 +24,7 @@
     "id": "311d4d50511f47e9b08260ed2b8fdee9",
     "username": "2020",
     "password_hash": "scrypt:32768:8:1$9jmRbUNfWpVUuY0k$1e0d152513a957c9e4944b50e21e8cde58c74bb934c1927a5fa2f0cee771ed67d7e3bb8005c419ba981038008912455333bb0163b0ebc1fa9b591245191c29ca",
-    "active": true,
+    "active": false,
     "created_at": "2026-07-31T17:45:14Z"
   },
   {
