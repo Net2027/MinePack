@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T22:38:05Z",
+  "updatedAt": "2026-08-03T06:54:26Z",
   "packs": [
     {
       "name": "4sangre",
@@ -805,7 +805,7 @@
     {
       "name": "کانال ما در یوتیوب",
       "description": null,
-      "link": "@minepack44",
+      "link": null,
       "icon": "https://raw.githubusercontent.com/Net2027/MinePack/main/Contact/کانال ما در یوتیوب/Screenshot%20(405).png",
       "tested": false
     }
