@@ -31,7 +31,7 @@
     "id": "73d977e9bdea46c19bf1c4525a611384",
     "username": "Kasraj",
     "password_hash": "scrypt:32768:8:1$fMO7DaxbRzHO0tNC$589ee96a77cba0b5110b517f719fa3ab08d8857e5614714b3c19dfb87f5a39e21dfb78ec3150ef9b46555eb67faf04e3dbf83e13d1002a87415518bbb46d4280",
-    "active": true,
+    "active": false,
     "created_at": "2026-07-31T18:16:37Z"
   }
 ]
