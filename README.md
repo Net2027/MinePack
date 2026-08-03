@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎮 MinePack
+# 🎮 PackCraft
 
 ### The Ultimate Minecraft Download Center
 
@@ -17,7 +17,7 @@ Download the best **Minecraft Shaders**, **Mods**, **Resource Packs**, and **Min
 
 # 📖 About
 
-**MinePack** is a modern Minecraft platform dedicated to providing high-quality downloads for the Minecraft community.
+**PackCraft** is a modern Minecraft platform dedicated to providing high-quality downloads for the Minecraft community.
 
 Discover and download the latest **Shaders**, **Mods**, **Resource Packs**, and **Minecraft** versions through a clean, fast, and user-friendly interface.
 
