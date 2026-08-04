@@ -88,6 +88,14 @@
             --font-family: 'Vazir', sans-serif;
             --font-display: 'Noto Serif Arabic', 'Vazir', serif;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            /* رنگ‌های نور چرخان دور لبه‌ها (هم‌خانواده با آبی اصلی تم) */
+            --spin-none: rgba(47, 111, 237, 0);
+            --spin-mid: rgba(47, 111, 237, 0.45);
+            --spin-glow: #7db2ff;
+            --spin-core: #ffffff;
+            --spin-speed: 6s;
+            --spin-width: 1.6px;
         }
 
         /* ===== حالت روشن ===== */
@@ -106,6 +114,12 @@
             --glass-bg: rgba(255, 255, 255, 0.72);
             --glass-border: rgba(29, 78, 216, 0.22);
             --glass-shadow: 0 8px 28px 0 rgba(20, 40, 100, 0.14);
+
+            /* در حالت روشن نور باید غلیظ‌تر باشه وگرنه روی پس‌زمینه‌ی روشن دیده نمی‌شه */
+            --spin-none: rgba(29, 78, 216, 0);
+            --spin-mid: rgba(29, 78, 216, 0.5);
+            --spin-glow: #1d4ed8;
+            --spin-core: #6ea0ff;
         }
 
         html[data-theme="light"] .fixed-bg {
@@ -612,9 +626,13 @@
 
             /* پرو-فیچرهای بهینه سازی کامپوزیت گرافیک */
             contain: paint;
-            transform: translateZ(0); 
+            transform: translateZ(0);
             backface-visibility: hidden;
         }
+
+        /* هدر و کارت‌ها حلقه‌ی نور دارن که کمی از لبه بیرون می‌زنه،
+           پس contain: paint (که دقیقاً لبه رو می‌بُره) براشون به layout/style تغییر می‌کنه */
+        header, .card { contain: layout style; }
 
         /* خط طلایی ظریف در بالای هر سطح شیشه‌ای - امضای بصری صفحه */
         header::before, .card::before, footer::before, .coming-soon-wrapper::before, .guide-wrapper::before {
@@ -629,86 +647,249 @@
             pointer-events: none;
         }
 
+        /* ===== نور آبی که نرم دور محیط کارت‌ها و هدر می‌چرخه =====
+           نکته‌ی مهم عملکردی: به‌جای انیمیشن زاویه‌ی گرادیانت (که هر فریم کل سطح رو
+           دوباره رنگ‌آمیزی می‌کنه و سایت رو کند می‌کنه)، یک مربعِ گرادیانت‌دار فقط
+           چرخونده می‌شه. transform کاملاً روی GPU اجرا می‌شه، پس هزینه‌ی هر فریم ~صفره.
+           گرادیانت هم فقط یک‌بار رندر می‌شه و بعدش کش می‌مونه. */
+        .spin-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: var(--spin-width);
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0.6;
+            transition: opacity 0.4s ease;
+
+            /* فقط نوارِ باریکِ لبه باقی می‌مونه و وسط خالی می‌شه */
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            mask-composite: exclude;
+        }
+
+        .spin-ring::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--ring-size, 150%);
+            aspect-ratio: 1;
+            background: conic-gradient(
+                var(--spin-none)   0deg,
+                var(--spin-mid)   46deg,
+                var(--spin-glow)  76deg,
+                var(--spin-core)  88deg,
+                var(--spin-glow) 100deg,
+                var(--spin-mid)  130deg,
+                var(--spin-none) 176deg,
+                var(--spin-none) 186deg,
+                var(--spin-mid)  226deg,
+                var(--spin-glow) 262deg,
+                var(--spin-mid)  300deg,
+                var(--spin-none) 348deg,
+                var(--spin-none) 360deg);
+            animation: ring-rotate var(--spin-speed) linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes ring-rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .card:hover > .spin-ring { opacity: 1; }
+
+        /* شروع ناهمزمانِ کارت‌ها تا حرکت‌شون مکانیکی و یکنواخت به‌نظر نرسه */
+        .card:nth-child(3n+2) > .spin-ring::before { animation-delay: -2.4s; }
+        .card:nth-child(3n+3) > .spin-ring::before { animation-delay: -4.1s; }
+
+        /* هدر یک نوار پهنه؛ مربع چرخان فقط کمی از عرضش بزرگ‌تر لازمه */
+        header > .spin-ring { --ring-size: 104%; opacity: 0.75; }
+
+        /* کارت‌های شبکه‌ای (پک/مود/شیدر/دانلود/فیلم) ممکنه ده‌ها تا باشن،
+           پس نورشون فقط موقع هاور روشن و چرخون می‌شه */
+        .pack-item,
+        .mod-item { position: relative; }
+
+        .pack-item > .spin-ring,
+        .mod-item > .spin-ring { opacity: 0; }
+
+        .pack-item > .spin-ring::before,
+        .mod-item > .spin-ring::before {
+            animation-duration: 4.5s;
+            animation-play-state: paused;
+            will-change: auto;
+        }
+
+        .pack-item:hover > .spin-ring,
+        .mod-item:hover > .spin-ring { opacity: 1; }
+
+        .pack-item:hover > .spin-ring::before,
+        .mod-item:hover > .spin-ring::before { animation-play-state: running; }
+
+        /* ===== هدر: چسبان، جمع‌شونده هنگام اسکرول ===== */
+        /* ===== هدر =====
+           عمداً sticky نیست: هدر شیشه‌ایِ چسبان با backdrop-filter باعث می‌شه مرورگر
+           در هر فریمِ اسکرول، بلورِ کل عرض صفحه رو از نو محاسبه کنه و سایت کند بشه. */
+        .header-shell {
+            position: relative;
+            z-index: 100;
+            padding-top: clamp(14px, 2.6vw, 28px);
+        }
+
         header {
             max-width: 1300px;
             width: 92%;
-            margin: clamp(16px, 3vw, 30px) auto 0 auto;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 16px;
-            padding: clamp(12px, 1.6vw, 15px) clamp(16px, 2.5vw, 30px);
-            border-radius: 20px;
+            padding: clamp(10px, 1.4vw, 14px) clamp(14px, 2.2vw, 26px);
+            border-radius: 22px;
             position: relative;
-            z-index: 100;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 13px;
             color: var(--text-main);
-            cursor: default;
+            cursor: pointer;
             user-select: none;
+            text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo-section img {
-            height: clamp(52px, 7vw, 80px);
-            width: clamp(52px, 7vw, 80px);
+            height: clamp(48px, 6vw, 66px);
+            width: clamp(48px, 6vw, 66px);
             object-fit: contain;
-            padding: 6px;
+            padding: 5px;
             border-radius: 50%;
             filter: drop-shadow(0 0 10px rgba(47, 111, 237, 0.4));
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                        filter 0.4s ease;
         }
 
-        .logo-section img:hover {
+        .logo-section:hover img {
             transform: scale(1.08) rotate(-3deg);
             filter: drop-shadow(0 0 18px rgba(47, 111, 237, 0.8));
+        }
+
+        /* نام برند در کنار لوگو */
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .brand-tagline {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+            letter-spacing: 0.2px;
         }
 
         .nav-wrapper {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 18px;
         }
 
         nav ul {
             display: flex;
-            gap: 35px;
+            align-items: center;
+            gap: 4px;
             list-style: none;
         }
 
         nav a {
+            display: block;
             text-decoration: none;
             color: var(--text-muted);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.95rem;
             position: relative;
-            padding: 5px 0;
-            transition: color 0.3s ease;
+            padding: 9px 13px;
+            border-radius: 12px;
+            white-space: nowrap;
+            transition: color 0.3s ease, background 0.3s ease;
             cursor: pointer;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--text-main);
+        /* پرِ نرمِ پشت آیتم فعال/هاور */
+        nav a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: rgba(47, 111, 237, 0.12);
+            border: 1px solid transparent;
+            opacity: 0;
+            transform: scale(0.86);
+            transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
         }
 
+        nav a:hover, nav a.active { color: var(--text-main); }
+
+        nav a:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        nav a.active::before {
+            opacity: 1;
+            transform: scale(1);
+            background: rgba(47, 111, 237, 0.16);
+            border-color: rgba(47, 111, 237, 0.35);
+            box-shadow: 0 4px 16px rgba(47, 111, 237, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        nav a > span { position: relative; z-index: 1; }
+
+        /* نقطه‌ی درخشان زیر آیتم فعال */
         nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 4px;
             right: 50%;
-            width: 0%;
+            transform: translateX(50%) scaleX(0);
+            width: 18px;
             height: 2px;
             background: var(--primary-gradient);
             border-radius: 5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateX(50%);
-            box-shadow: 0 0 10px rgba(47, 111, 237, 0.6);
+            box-shadow: 0 0 10px rgba(47, 111, 237, 0.7);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a.active::after { transform: translateX(50%) scaleX(1); }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
         .theme-toggle {
             flex-shrink: 0;
@@ -743,6 +924,28 @@
 
         html[data-theme="light"] .theme-icon-dark { opacity: 0; transform: rotate(-90deg) scale(0.5); }
         html[data-theme="light"] .theme-icon-light { opacity: 1; transform: rotate(0) scale(1); }
+
+        /* دکمه‌ی منوی موبایل — روی دسکتاپ پنهانه */
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: rgba(47, 111, 237, 0.08);
+            border: 1px solid var(--glass-border);
+            color: var(--primary-cyan);
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-toggle:hover {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 16px rgba(47, 111, 237, 0.25);
+        }
 
         main {
             flex: 1;
@@ -1552,20 +1755,78 @@
         }
 
         /* ===== تبلت و لپ‌تاپ کوچک ===== */
-        @media (max-width: 1100px) {
-            nav ul { gap: 22px; }
-            nav a { font-size: 0.95rem; }
-            .nav-wrapper { gap: 24px; }
+        @media (max-width: 1240px) {
+            nav a { font-size: 0.88rem; padding: 8px 10px; }
+            .nav-wrapper { gap: 12px; }
+            .brand-tagline { display: none; }
         }
 
+        @media (max-width: 1080px) {
+            .brand-text { display: none; }
+        }
+
+        /* ===== زیر ۹۹۲ پیکسل: منو به کشوی جمع‌شونده تبدیل می‌شه ===== */
         @media (max-width: 992px) {
-            header { flex-direction: column; gap: 20px; padding: 20px; }
-            .nav-wrapper { flex-direction: column; gap: 20px; width: 100%; justify-content: center; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-toggle { display: flex; }
+
+            header {
+                flex-wrap: wrap;
+                row-gap: 0;
+            }
+
+            .brand-text { display: flex; }
+
+            .nav-wrapper {
+                order: 3;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+
+                /* بسته: ارتفاع صفر و محو. باز: نرم باز می‌شه */
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+                transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                            opacity 0.35s ease,
+                            margin-top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            header.nav-open .nav-wrapper {
+                max-height: 70vh;
+                opacity: 1;
+                overflow-y: auto;
+                pointer-events: auto;
+                margin-top: 14px;
+            }
+
+            nav { width: 100%; }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 2px;
+                padding-top: 12px;
+                border-top: 1px solid var(--glass-border);
+            }
+
+            nav a {
+                padding: 13px 14px;
+                font-size: 1rem;
+                text-align: right;
+            }
+
+            nav a::after { display: none; }
+
+            .header-actions {
+                order: 2;
+                margin-right: auto;
+            }
+
             footer { flex-direction: column; gap: 15px; text-align: center; }
         }
 
-        /* ===== بین موبایل و تبلت: کارت‌ها تک‌ستونه بشن تا سرریز نشن ===== */
         @media (max-width: 800px) {
             .cards-grid { grid-template-columns: 1fr; }
             .packs-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
@@ -1583,8 +1844,11 @@
             header { width: 94%; }
             footer { width: 94%; padding: 22px 20px; }
 
-            nav ul { gap: 12px 14px; }
-            nav a { font-size: 0.92rem; }
+            nav a { font-size: 0.95rem; }
+
+            /* روی موبایل نور چرخان آرام‌تر و باریک‌تر می‌شه تا مصرف باتری بالا نره */
+            :root { --spin-speed: 9s; --spin-width: 1.3px; }
+            header::after, .card::after { opacity: 0.7; }
 
             .loader-container { padding: 36px 22px; }
             .brand-title { font-size: 1.5rem; }
@@ -1683,6 +1947,21 @@
 
             .bg-voxel span { opacity: 0.45; }
             .bg-pixel span { opacity: 0.6; }
+
+            /* نور چرخان متوقف می‌شه ولی حاشیه‌ی آبی ثابت باقی می‌مونه */
+            header::after,
+            .card::after,
+            .pack-item::after,
+            .mod-item::after {
+                animation: none !important;
+                background: none;
+                border: 1px solid var(--spin-mid);
+                padding: 0;
+                -webkit-mask: none;
+                mask: none;
+            }
+
+            header::after, .card::after { opacity: 1; }
         }
     </style>
 </head>
@@ -1741,30 +2020,44 @@
     </div>
 
     <!-- هدر سایت -->
-    <header class="animate-up delay-1">
-        <div class="logo-section">
-            <img src="main.png" alt="پک کرفت">
-        </div>
-        <div class="nav-wrapper">
-            <nav>
-                <ul>
-                    <li><a class="nav-link active" data-target="home">صفحه اصلی</a></li>
-                    <li><a class="nav-link" data-target="download">دانلود ماینکرفت</a></li>
-                    <li><a class="nav-link" data-target="resource">ریسورس پک‌ها</a></li>
-                    <li><a class="nav-link" data-target="mods">مود ها</a></li>
-                    <li><a class="nav-link" data-target="shaders">شیدر ها</a></li>
-                    <li><a class="nav-link" data-target="videos">فیلم ها</a></li>
-                    <li><a class="nav-link" data-target="guide">راهنما</a></li>
-                    <li><a class="nav-link" data-target="about">درباره ما</a></li>
-                    <li><a class="nav-link" data-target="contact">تماس</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="تغییر حالت روشن و تاریک" title="حالت روشن / تاریک">
-                <i class="ph-fill ph-moon theme-icon-dark"></i>
-                <i class="ph-fill ph-sun theme-icon-light"></i>
-            </button>
-        </div>
-    </header>
+    <div class="header-shell animate-up delay-1" id="header-shell">
+        <header id="site-header">
+            <span class="spin-ring" aria-hidden="true"></span>
+            <a class="logo-section nav-link" data-target="home" aria-label="پک کرفت — صفحه اصلی">
+                <img src="main.png" alt="پک کرفت">
+                <span class="brand-text">
+                    <span class="brand-name">پک کرفت</span>
+                    <span class="brand-tagline">مرجع تخصصی ماینکرفت</span>
+                </span>
+            </a>
+
+            <div class="nav-wrapper" id="nav-wrapper">
+                <nav>
+                    <ul>
+                        <li><a class="nav-link active" data-target="home"><span>صفحه اصلی</span></a></li>
+                        <li><a class="nav-link" data-target="download"><span>دانلود ماینکرفت</span></a></li>
+                        <li><a class="nav-link" data-target="resource"><span>ریسورس پک‌ها</span></a></li>
+                        <li><a class="nav-link" data-target="mods"><span>مود ها</span></a></li>
+                        <li><a class="nav-link" data-target="shaders"><span>شیدر ها</span></a></li>
+                        <li><a class="nav-link" data-target="videos"><span>فیلم ها</span></a></li>
+                        <li><a class="nav-link" data-target="guide"><span>راهنما</span></a></li>
+                        <li><a class="nav-link" data-target="about"><span>درباره ما</span></a></li>
+                        <li><a class="nav-link" data-target="contact"><span>تماس</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="تغییر حالت روشن و تاریک" title="حالت روشن / تاریک">
+                    <i class="ph-fill ph-moon theme-icon-dark"></i>
+                    <i class="ph-fill ph-sun theme-icon-light"></i>
+                </button>
+                <button id="nav-toggle" class="nav-toggle" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="nav-wrapper">
+                    <i class="ph-bold ph-list"></i>
+                </button>
+            </div>
+        </header>
+    </div>
 
     <!-- محتوای اصلی -->
     <main>
@@ -2169,6 +2462,62 @@
                 const next = isLight ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', next);
                 try { localStorage.setItem('packcraft_theme', next); } catch (e) {}
+            });
+        })();
+
+        // ===== هدر: منوی موبایل و دسترسی با کیبورد =====
+        (function headerSystem() {
+            const header = document.getElementById('site-header');
+            const navToggle = document.getElementById('nav-toggle');
+            if (!header) return;
+
+            // باز و بسته کردن منو در موبایل
+            function setMenu(open) {
+                header.classList.toggle('nav-open', open);
+                if (navToggle) {
+                    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) icon.className = open ? 'ph-bold ph-x' : 'ph-bold ph-list';
+                }
+            }
+
+            if (navToggle) {
+                navToggle.addEventListener('click', () => {
+                    setMenu(!header.classList.contains('nav-open'));
+                });
+            }
+
+            // بعد از انتخاب یک تب، منو خودش بسته می‌شه و صفحه نرم به بالا برمی‌گرده
+            document.querySelectorAll('.nav-link').forEach(link => {
+                // این لینک‌ها href ندارن، پس دستی قابل فوکوس و اجرا با کیبورد می‌شن
+                if (!link.hasAttribute('tabindex')) link.setAttribute('tabindex', '0');
+                link.setAttribute('role', 'link');
+
+                link.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        link.click();
+                    }
+                });
+
+                link.addEventListener('click', () => {
+                    setMenu(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // کلیک بیرون از هدر یا زدن Esc، منو رو می‌بنده
+            document.addEventListener('click', e => {
+                if (header.classList.contains('nav-open') && !header.contains(e.target)) setMenu(false);
+            });
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') setMenu(false);
+            });
+
+            // با بزرگ شدن صفحه (رفتن به حالت دسکتاپ) منو نباید نیمه‌باز بمونه
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 992) setMenu(false);
             });
         })();
 
@@ -2714,6 +3063,17 @@
                 });
         })();
 
+        // حلقه‌ی نور چرخان رو به کارت‌ها اضافه می‌کنه (چه ثابت، چه ساخته‌شده با جاوااسکریپت)
+        function mountSpinRings(root) {
+            (root || document).querySelectorAll('.card, .pack-item, .mod-item').forEach(el => {
+                if (el.querySelector(':scope > .spin-ring')) return;
+                const ring = document.createElement('span');
+                ring.className = 'spin-ring';
+                ring.setAttribute('aria-hidden', 'true');
+                el.appendChild(ring);
+            });
+        }
+
         // رندرینگ ۱۰۰٪ مبتنی بر GPU (حذف کامل Paint Trigger ها)
         function wireCardGlow(card) {
             let rect;
@@ -2737,6 +3097,7 @@
         }
 
         document.querySelectorAll('.card').forEach(wireCardGlow);
+        mountSpinRings(document);
     </script>
 </body>
 </html>
