@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T09:48:13Z",
+  "updatedAt": "2026-08-04T12:02:47Z",
   "packs": [
     {
       "name": "4sangre",
@@ -641,6 +641,15 @@
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مپ تمرینی بدوراز/mcpedl-jpg.jpg",
       "tested": true,
       "featured": false
+    },
+    {
+      "name": "مپ خفن و جذاب وان بلاک در اقیانوس",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مپ خفن و جذاب وان بلاک در اقیانوس/File/Ocean%20One%20Block%20Hardcore%20-%20v1.0.mcworld",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مپ خفن و جذاب وان بلاک در اقیانوس/Screenshot%20(408).png",
+      "tested": true,
+      "featured": true
     },
     {
       "name": "مپ وان بلاک",
