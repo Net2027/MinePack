@@ -709,6 +709,22 @@
         .card:nth-child(3n+2) > .spin-ring::before { animation-delay: -2.4s; }
         .card:nth-child(3n+3) > .spin-ring::before { animation-delay: -4.1s; }
 
+        /* کارت‌های صفحه‌ی اصلی: نورِ چرخان فقط موقع هاور روشن و متحرک می‌شه
+           (بیرون از هاور، انیمیشن pause می‌مونه تا هیچ فریمی رندر نشه) */
+        .cards-grid > .card > .spin-ring { opacity: 0; }
+
+        .cards-grid > .card > .spin-ring::before {
+            animation-play-state: paused;
+            will-change: auto;
+        }
+
+        .cards-grid > .card:hover > .spin-ring { opacity: 1; }
+
+        .cards-grid > .card:hover > .spin-ring::before {
+            animation-play-state: running;
+            will-change: transform;
+        }
+
         /* هدر یک نوار پهنه؛ مربع چرخان فقط کمی از عرضش بزرگ‌تر لازمه */
         header > .spin-ring { --ring-size: 104%; opacity: 0.75; }
 
