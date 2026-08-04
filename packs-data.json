@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T16:07:52Z",
+  "updatedAt": "2026-08-04T17:48:04Z",
   "packs": [
     {
       "name": "4sangre",
@@ -190,15 +190,6 @@
       "compatibility": "سازگار با جاوا",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/continuity/images%20(1).jpg",
       "tested": true,
-      "featured": false
-    },
-    {
-      "name": "creat",
-      "file": null,
-      "description": "تو این ماد هر کار علمی مثلا میتونی کار خونه بسازی خط تولید کلنگ یا هیلکوپتر و......",
-      "compatibility": "1.21",
-      "icon": null,
-      "tested": false,
       "featured": false
     },
     {
