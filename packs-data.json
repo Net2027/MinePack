@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T21:48:06Z",
+  "updatedAt": "2026-08-04T08:57:51Z",
   "packs": [
     {
       "name": "4sangre",
@@ -542,6 +542,15 @@
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مود ترسناک ویریتی/hq720.jpg",
       "tested": true,
       "featured": false
+    },
+    {
+      "name": "مود خفن و جذاب پارکور ماری",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مود خفن و جذاب پارکور ماری/File/Infinity%20Snake%20Parkour%20(world_template)(1).mctemplate",
+      "description": "بدراک 1.20 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مود خفن و جذاب پارکور ماری/IMG_20260709_225520_068.jpg",
+      "tested": true,
+      "featured": true
     },
     {
       "name": "مود ساخت شهر",
