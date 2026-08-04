@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T15:58:06Z",
+  "updatedAt": "2026-08-04T15:59:33Z",
   "packs": [
     {
       "name": "4sangre",
@@ -812,7 +812,7 @@
   "contacts": [
     {
       "name": "ایمیل",
-      "description": "ارتباط با ما -- درخواست همکاری\r\nparsagolmahi91@gmail.com",
+      "description": "ارتباط با ما -- درخواست همکاری",
       "link": "parsagolmahi91@gmail.com",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Contact/ایمیل/images%20(2).jpg",
       "tested": false
@@ -840,7 +840,7 @@
     },
     {
       "name": "کانال ما در یوتیوب",
-      "description": null,
+      "description": "انواع استریم ها توسط گروه پک کرفت",
       "link": null,
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Contact/کانال ما در یوتیوب/Screenshot%20(405).png",
       "tested": false
