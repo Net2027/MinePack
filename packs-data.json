@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T08:57:51Z",
+  "updatedAt": "2026-08-04T09:06:09Z",
   "packs": [
     {
       "name": "4sangre",
@@ -659,6 +659,15 @@
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مینی بلاک/photo_2026-07-23_08-47-35.jpg",
       "tested": true,
       "featured": false
+    },
+    {
+      "name": "مینی ماب های بامزه",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مینی ماب های بامزه/File/Mini-Mob%20Buddies%20Add-On%20(Add-on).mcaddon",
+      "description": "بدراک1.26 به بالا",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/مینی ماب های بامزه/IMG_20260731_123101_293.jpg",
+      "tested": true,
+      "featured": true
     },
     {
       "name": "هاردکور در سرزمین اژدهایان",
