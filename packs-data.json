@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T18:55:55Z",
+  "updatedAt": "2026-08-05T06:29:38Z",
   "packs": [
     {
       "name": "4sangre",
@@ -132,6 +132,15 @@
       "java": null,
       "bedrock": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Pack/Venom/Bedrock/Venom16x.rar",
       "description": "سازگار با نسخه 1.21 به بالا",
+      "icon": null,
+      "tested": false,
+      "featured": false
+    },
+    {
+      "name": "y",
+      "java": null,
+      "bedrock": null,
+      "description": null,
       "icon": null,
       "tested": false,
       "featured": false
