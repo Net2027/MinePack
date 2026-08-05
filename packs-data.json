@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T10:12:18Z",
+  "updatedAt": "2026-08-05T10:23:30Z",
   "packs": [
     {
       "name": "4sangre",
@@ -334,6 +334,15 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/تورچ در دست چپ/photo_2026-07-23_09-07-21.jpg",
       "tested": true,
+      "featured": false
+    },
+    {
+      "name": "تورچ دست چپ",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/تورچ دست چپ/File/System%20Dynamic%20Lights.mcpack",
+      "description": "بدراک 1.26.30",
+      "compatibility": "سازگار بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/تورچ دست چپ/Screenshot%20(413).png",
+      "tested": false,
       "featured": false
     },
     {
