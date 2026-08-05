@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T12:42:25Z",
+  "updatedAt": "2026-08-05T13:01:45Z",
   "packs": [
     {
       "name": "4sangre",
@@ -135,6 +135,15 @@
       "icon": null,
       "tested": false,
       "featured": false
+    },
+    {
+      "name": "استرلا",
+      "java": null,
+      "bedrock": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Pack/استرلا/Bedrock/استرلا.mcpack",
+      "description": "بدراک 1.21 به بالا",
+      "icon": null,
+      "tested": true,
+      "featured": true
     },
     {
       "name": "دویر 70k",
