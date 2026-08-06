@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T19:19:56Z",
+  "updatedAt": "2026-08-06T19:38:06Z",
   "packs": [
     {
       "name": "4sangre",
@@ -821,6 +821,15 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Shader/Mystica%20Shaders%20v2.7.0/photo_2026-07-23_08-49-20.jpg",
+      "tested": true,
+      "featured": false
+    },
+    {
+      "name": "Realism VFX Add-On by DLMC",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Shader/Realism%20VFX%20Add-On%20by%20DLMC/File/Realism%20VFX%20Add-On%20by%20DLMC.mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Shader/Realism%20VFX%20Add-On%20by%20DLMC/photo_2026-08-06_23-00-48.jpg",
       "tested": true,
       "featured": false
     },
