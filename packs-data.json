@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T08:03:51Z",
+  "updatedAt": "2026-08-06T13:12:48Z",
   "packs": [
     {
       "name": "4sangre",
@@ -822,6 +822,14 @@
       "description": "تست مود پارکور 1000 ماموریت",
       "link": "https://www.aparat.com/v/erq1o0t",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Film/معرفی و تست مود پارکور 1000 ماموریت/photo_2026-07-23_09-15-54.jpg",
+      "tested": true,
+      "featured": false
+    },
+    {
+      "name": "مپ خفن و جذاب وان بلاک در اقیانوس",
+      "description": "تست مپ وان بلاک در اقیانوس",
+      "link": "https://www.aparat.com/v/tuyy5nu",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Film/مپ خفن و جذاب وان بلاک در اقیانوس/Screenshot%20(408).png",
       "tested": true,
       "featured": false
     }
