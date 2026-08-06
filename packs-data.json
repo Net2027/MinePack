@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T19:08:48Z",
+  "updatedAt": "2026-08-06T19:11:51Z",
   "packs": [
     {
       "name": "4sangre",
@@ -792,6 +792,15 @@
       "description": "نسخه 1.12به بالا",
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/کلی در جدید و مخفی/photo_2026-07-23_09-05-10.jpg",
+      "tested": true,
+      "featured": false
+    },
+    {
+      "name": "کوله پشتی",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/کوله پشتی/File/BACKPACKS%20CRAFTABLE!(1)%20(1).mctemplate",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/کوله پشتی/photo_2026-08-06_22-40-24.jpg",
       "tested": true,
       "featured": false
     }
