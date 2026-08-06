@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T19:11:51Z",
+  "updatedAt": "2026-08-06T19:19:56Z",
   "packs": [
     {
       "name": "4sangre",
@@ -784,6 +784,15 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/چراغ های جدید/photo_2026-07-21_13-43-38.jpg",
       "tested": false,
+      "featured": false
+    },
+    {
+      "name": "کلی تی ان تی قدرتمند",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/کلی تی ان تی قدرتمند/File/TNT+ .mctemplate",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/کلی تی ان تی قدرتمند/photo_2026-08-06_22-42-47.jpg",
+      "tested": true,
       "featured": false
     },
     {
