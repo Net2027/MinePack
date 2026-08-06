@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T16:37:57Z",
+  "updatedAt": "2026-08-06T19:08:48Z",
   "packs": [
     {
       "name": "4sangre",
@@ -766,6 +766,15 @@
       "compatibility": "سازگار با بدراک",
       "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/پختن آور ها در کمپ فایر/photo_2026-07-21_14-17-46.jpg",
       "tested": false,
+      "featured": false
+    },
+    {
+      "name": "پراید اسپورت",
+      "file": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/پراید اسپورت/File/Saipa%20pride%20131%20Sport(1).mcaddon",
+      "description": "نسخه 1.12به بالا",
+      "compatibility": "سازگار با بدراک",
+      "icon": "https://raw.githubusercontent.com/Net2027/PackCraft/main/Mod/پراید اسپورت/photo_2026-08-06_22-36-32.jpg",
+      "tested": true,
       "featured": false
     },
     {
