@@ -19,12 +19,5 @@
     "password_hash": "scrypt:32768:8:1$YCTUrXvJMdAjsXqD$6cc4358e9dcadb1731c5c8dec0d643e927a79d92eb3d453f6af7eabbe511a65254705a0805d64a27f22ee5a48034544379524ccd87690b4afab9a169cf8f4170",
     "active": false,
     "created_at": "2026-08-05T07:59:13Z"
-  },
-  {
-    "id": "df2dfd5d5f9a4afabc31e0f8d601022d",
-    "username": "Kasraj",
-    "password_hash": "scrypt:32768:8:1$MBIt0GBJhXCK43Gh$0ab6e3d855a30b2945a55ab3995b2f3291ebc3345f4db37ea9c6c5786be2ee1d58ac6ad43a948dad745c28d32945d5fc12984a23d2d69aa2f77f71115894c8fa",
-    "active": true,
-    "created_at": "2026-08-07T07:58:14Z"
   }
 ]
